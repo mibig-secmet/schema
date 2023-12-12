@@ -1,0 +1,22 @@
+- **Alkaloid**
+- **NRPS**
+  - modular
+  - NAPAA
+  - CDPS
+- **Other**
+- **PKS**
+  - Type I
+    - modular
+      - cis-AT
+      - trans-AT
+    - iterative
+  - Type II
+    - aromatic
+    - highly-reducing
+  - Type III
+- **RiPP**
+  - Lanthipeptide
+  - YcaO-derived???
+  - ...
+- **Saccharide**
+- **Terpene**

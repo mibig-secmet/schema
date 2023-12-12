@@ -1,0 +1,7 @@
+- Homology-based prediction
+- Correlation of genomic and metabolomic data
+- Gene expression correlated with compound production
+- Knock-out studies
+- Enzymatic assays
+- Heterologous expression
+- In vitro expression

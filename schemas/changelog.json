@@ -1,0 +1,62 @@
+{
+  "$id": "https://mibig.secondarymetabolites.org/schemas/changelog",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "releases": {
+      "type": "list",
+      "items": {
+        "$ref": "#/$defs/release"
+      }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contributors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/submitter"
+          }
+        },
+        "reviewers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/submitter"
+          }
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^(\\d+(\\.\\d+)*|next)$"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "entries": {
+          "type": "list",
+          "items": {
+            "$ref": "#/$defs/entry"
+          }
+        }
+      }
+    },
+    "submitter": {
+      "type": "string",
+      "minLength": 24,
+      "maxLength": 24
+    }
+  }
+}

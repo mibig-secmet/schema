@@ -1,0 +1,22 @@
+- **proteinogenic**
+  - alanine
+  - arginine
+  - asparagine
+  - aspartic acid
+  - cysteine
+  - glutamic acid
+  - glutamine
+  - glycine
+  - histidine
+  - isoleucine
+  - leucine
+  - lysine
+  - methionine
+  - phenylalanine
+  - proline
+  - serine
+  - threonine
+  - tryptophan
+  - tyrosine
+  - valine
+- **non-proteinogenic**

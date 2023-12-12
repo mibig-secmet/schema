@@ -1,0 +1,17 @@
+- Activity assay
+- ACVS assay
+- ATP-PPi exchange assay
+- Enzyme-coupled assay
+- Feeding study
+- Heterologous expression
+- Homology
+- HPLC
+- In-vitro experiments
+- Knock-out studies
+- Mass spectrometry
+- NMR
+- Radio labelling
+- Sequence-based prediction
+- Steady-state kinetics
+- Structure-based inference
+- X-ray crystallography

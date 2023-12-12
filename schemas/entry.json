@@ -1,0 +1,11 @@
+{
+  "$id": "https://mibig.secondarymetabolites.org/schemas/common",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "accession": {
+      "type": "string",
+      "format": "BGC\\d{7,7}"
+    }
+  }
+}

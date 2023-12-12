@@ -1,0 +1,4 @@
+- pubmed ID
+- DOI
+- patent
+- URL
