@@ -1,10 +1,24 @@
-- **Alkaloid**
 - **NRPS**
-  - modular
-  - NAPAA
-  - CDPS
+
+  - thiotemplated
+    - uses condensation domain
+      - Type I
+      - Type II
+    - does not use condensation domain
+      - Type III
+  - non-thiotemplated
+    - tRNA-independent
+      - Type IV
+    - tRNA-dependent
+      - Type V
+
 - **Other**
+
+  - Cyclitol
+  - Aminocoumarin
+
 - **PKS**
+
   - Type I
     - modular
       - cis-AT
@@ -14,9 +28,20 @@
     - aromatic
     - highly-reducing
   - Type III
-- **RiPP**
-  - Lanthipeptide
-  - YcaO-derived???
-  - ...
+
+- **Ribosomal**
+
+  - Unmodified
+  - RiPP
+    - Lanthipeptide
+      - Class I
+      - Class II
+      - Class III
+        - Lipolanthine
+      - Class IV
+      - Class V
+    - YcaO-derived???
+    - ...
+
 - **Saccharide**
 - **Terpene**
