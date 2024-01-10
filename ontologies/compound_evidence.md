@@ -1,0 +1,6 @@
+- NMR
+- Mass spectrometry
+- MS/MS
+- X-ray cystallography
+- Chemical derivatisation
+- Total Synthesis

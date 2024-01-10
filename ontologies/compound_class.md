@@ -8,3 +8,7 @@
 - **Nucleoside**
 
   - Liponucleoside
+
+- **Peptide**
+
+  - Glycopeptide

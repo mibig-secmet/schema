@@ -1,6 +1,7 @@
 - **Status**
 
   - pending
+  - embargoed
   - active
   - retired
 
@@ -11,6 +12,6 @@
   - complete
 
 - **Quality**
-  - High
-  - Medium
-  - Low
+  - low
+  - medium
+  - high
