@@ -1,0 +1,14 @@
+{
+  "$id": "https://mibig.secondarymetabolites.org/schemas/taxonomy",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "ncbiTaxId": {
+      "type": "number"
+    }
+  },
+  "required": ["name", "ncbiTaxId"]
+}

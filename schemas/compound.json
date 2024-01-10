@@ -1,0 +1,148 @@
+{
+  "$id": "https://mibig.secondarymetabolites.org/schemas/compound",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "$ref": "#/$defs/name"
+    },
+    "classes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/class"
+      },
+      "uniqueItems": true
+    },
+    "bioactivities": {
+      "type": "array"
+    },
+    "moieties": {
+      "type": "array"
+    },
+    "structure": {
+      "$ref": "#/$defs/smiles"
+    },
+    "synonyms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/name"
+      },
+      "uniqueItems": true
+    },
+    "targets": {
+      "type": "array"
+    },
+    "databaseIds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/databaseId"
+      },
+      "uniqueItems": true
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "mass": {
+      "type": "number"
+    },
+    "ionType": {
+      "$ref": "#/$defs/ionType"
+    },
+    "formula": {
+      "type": "string"
+    }
+  },
+  "required": ["name", "evidence"],
+  "$defs": {
+    "class": {
+      "type": "string",
+      "oneOf": ["alkaloid", "nucleoside", "peptide"]
+    },
+    "databaseId": {
+      "type": "string",
+      "oneOf": [
+        {
+          "pattern": "^pubchem:(\\d+)$"
+        },
+        {
+          "pattern": "^chebi:(\\d+)$"
+        },
+        {
+          "pattern": "^chembl:CHEMBL(\\d+)$"
+        },
+        {
+          "pattern": "^chemspider:(\\d+)$"
+        },
+        {
+          "pattern": "^npatlas:NPA(\\d+)$"
+        },
+        {
+          "pattern": "^lotus:Q(\\d+)$"
+        }
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "type": "string",
+          "oneOf": [
+            "NMR",
+            "Mass spectrometry",
+            "MS/MS",
+            "X-ray crystallography",
+            "Chemical derivatisation",
+            "Total synthesis"
+          ]
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/$defs/citation"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": ["method", "references"]
+    },
+    "ionType": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ion": {
+          "type": "string",
+          "oneOf": ["[M+H]+", "[M-H]-", "[M+Na]+", "other"]
+        },
+        "details": {
+          "type": "string"
+        }
+      },
+      "required": ["ion"],
+      "if": {
+        "properties": {
+          "ion": {
+            "const": "other"
+          }
+        }
+      },
+      "then": {
+        "required": ["details"]
+      }
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[a-zA-Zα-ωΑ-Ω0-9\\[\\]'()/&,. +-]+$"
+    },
+    "smiles": {
+      "pattern": "^[\\[\\]a-zA-Z0-9\\@()=\\/\\\\#+.%*-]+$",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "$id": "https://mibig.secondarymetabolites.org/schemas/locus",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "accession": {
+      "type": "string"
+    },
+    "start": {
+      "type": "number",
+      "min": 0
+    },
+    "end": {
+      "type": "number"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evidenceCode": {
+            "$ref": "#/$defs/evidenceCode"
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "$ref": "/schemas/common/$defs/citation"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": ["evidenceCode", "references"]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "evidenceCode": {
+      "type": "string",
+      "oneOf": [
+        "Homology-based prediction",
+        "Correlation of genomic and metabolomic data",
+        "Gene expression correlated with compound production",
+        "Knock-out studies",
+        "Enzymatic assays",
+        "Heterologous expression",
+        "In vitro expression"
+      ]
+    }
+  }
+}

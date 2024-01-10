@@ -1,11 +1,70 @@
 {
-  "$id": "https://mibig.secondarymetabolites.org/schemas/common",
+  "$id": "https://mibig.secondarymetabolites.org/schemas/entry",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
     "accession": {
+      "$ref": "#/$defs/entryId"
+    },
+    "status": {
+      "$ref": "#/$defs/status"
+    },
+    "completeness": {
+      "$ref": "#/$defs/completeness"
+    },
+    "loci": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/locus"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "retirementReasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "seeAlso": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entryId"
+      },
+      "uniqueItems": true
+    },
+    "biosyntheticClasses": {
+      "type": "array",
+      "uniqueItems": true
+    },
+    "compounds": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/compound"
+      },
+      "uniqueItems": true
+    },
+    "taxonomy": {
+      "$ref": "/schemas/taxonomy"
+    }
+  },
+  "$defs": {
+    "completeness": {
+      "type": "string",
+      "oneOf": ["unknown", "incomplete", "complete"]
+    },
+    "entryId": {
       "type": "string",
       "format": "BGC\\d{7,7}"
+    },
+    "quality": {
+      "type": "string",
+      "oneOf": ["low", "medium", "high"]
+    },
+    "status": {
+      "type": "string",
+      "oneOf": ["pending", "embargoed", "active", "retired"]
     }
   }
 }
