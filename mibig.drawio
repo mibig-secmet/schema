@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-12-13T08:26:26.082Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="Tp4iYX6pL3Sc0iPwZ789" version="22.1.2" type="device">
+<mxfile host="Electron" modified="2024-01-10T10:42:20.285Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.16 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="P0etLut-t5-crRIBdNqG" version="22.1.16" type="device">
   <diagram name="Page-1" id="QmS4hE2Vp2O_9ink1kWo">
-    <mxGraphModel dx="2061" dy="1198" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2514" dy="1024" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -77,13 +77,13 @@
         <mxCell id="y5VxL8M3IGMAxQPXXkcC-1" value="Locus" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="334" y="630" width="176" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="y5VxL8M3IGMAxQPXXkcC-2" value="+ Accession: string&lt;br&gt;+ Start: int&lt;br&gt;+ End: end&lt;br&gt;+ Evidence: LocusEvidence[]" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="y5VxL8M3IGMAxQPXXkcC-1" vertex="1">
+        <mxCell id="y5VxL8M3IGMAxQPXXkcC-2" value="+ Accession: string&lt;br&gt;+ Start: int&lt;br&gt;+ End: int&lt;br&gt;+ Evidence: LocusEvidence[]" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="y5VxL8M3IGMAxQPXXkcC-1" vertex="1">
           <mxGeometry y="50" width="176" height="70" as="geometry" />
         </mxCell>
         <mxCell id="y5VxL8M3IGMAxQPXXkcC-3" value="Entry" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="30" y="630" width="250" height="210" as="geometry" />
         </mxCell>
-        <mxCell id="y5VxL8M3IGMAxQPXXkcC-4" value="+ Accession: EntryID&lt;br&gt;+ Status: EntryStatus&lt;br&gt;+ Completeness: EntryCompleteness&lt;br&gt;+ Loci: Locus[]&lt;br&gt;+ Retirement reasons: string[]&lt;br&gt;+ See also: EntryID[]&lt;br&gt;+ Biosynthetic classes: BiosyntheticClass[]&lt;br&gt;+ Compounds: Compound[]&lt;br&gt;+ NCBI tax ID: int" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="y5VxL8M3IGMAxQPXXkcC-3" vertex="1">
+        <mxCell id="y5VxL8M3IGMAxQPXXkcC-4" value="+ Accession: EntryID&lt;br&gt;+ Status: EntryStatus&lt;br&gt;+ Completeness: EntryCompleteness&lt;br&gt;+ Loci: Locus[]&lt;br&gt;+ Retirement reasons: string[]&lt;br&gt;+ See also: EntryID[]&lt;br&gt;+ Biosynthetic classes: BiosyntheticClass[]&lt;br&gt;+ Compounds: Compound[]&lt;br&gt;+ Taxonomy: Taxonomy&lt;br&gt;+ Comments: string" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="y5VxL8M3IGMAxQPXXkcC-3" vertex="1">
           <mxGeometry y="50" width="250" height="160" as="geometry" />
         </mxCell>
         <mxCell id="y5VxL8M3IGMAxQPXXkcC-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="y5VxL8M3IGMAxQPXXkcC-4" target="y5VxL8M3IGMAxQPXXkcC-2" edge="1">
@@ -216,10 +216,40 @@
         <mxCell id="y5VxL8M3IGMAxQPXXkcC-48" value="+ Type: BiosyntheticType&lt;br&gt;&lt;br&gt;Other attributes are&lt;br&gt;type-dependent&lt;br&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="y5VxL8M3IGMAxQPXXkcC-47" vertex="1">
           <mxGeometry y="50" width="160" height="66" as="geometry" />
         </mxCell>
-        <mxCell id="zKbnjhZJah_K4Z327JOX-1" value="BiosyntheticType&lt;br&gt;controlled by&lt;br&gt;BGC type ontology" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zKbnjhZJah_K4Z327JOX-1" value="BiosyntheticType&lt;br&gt;controlled by&lt;br&gt;BGC type ontology" style="shape=note;size=20;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="560" y="780" width="100" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="zKbnjhZJah_K4Z327JOX-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=-0.03;entryY=0.8;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="y5VxL8M3IGMAxQPXXkcC-48" target="zKbnjhZJah_K4Z327JOX-1">
+        <mxCell id="zKbnjhZJah_K4Z327JOX-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=-0.03;entryY=0.8;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="y5VxL8M3IGMAxQPXXkcC-48" target="zKbnjhZJah_K4Z327JOX-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Uvi9JcyIBBcx5CK23ZVL-1" value="Compound" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-518" y="500" width="210" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="Uvi9JcyIBBcx5CK23ZVL-2" value="+ Name: CompoundName&lt;br&gt;+ Classes: CompoundClass[]&lt;br&gt;+ Bioactivities: Bioactivity[]&lt;br&gt;+ Moieties: Moiety[]&lt;br&gt;+ Structure: SMILES&lt;br&gt;+ Synonyms: string[]&lt;br&gt;+ Targets: Target[]&lt;br&gt;+ Database IDs: DatabaseId[]&lt;br&gt;+ Evidence: CompoundEvidence[]&lt;br&gt;+ Mass: number&lt;br&gt;+ Ion Type: string&lt;br&gt;+ Formula: string" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="Uvi9JcyIBBcx5CK23ZVL-1">
+          <mxGeometry y="50" width="210" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="Uvi9JcyIBBcx5CK23ZVL-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.35;entryY=1.027;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Uvi9JcyIBBcx5CK23ZVL-1" target="2XhkViiyKJ3v6HBh6uYh-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Uvi9JcyIBBcx5CK23ZVL-4" value="Compound Class&lt;br&gt;controlled by&lt;br&gt;Compound Class ontology" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="485" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Uvi9JcyIBBcx5CK23ZVL-5" value="CompoundEvidence" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="270" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Uvi9JcyIBBcx5CK23ZVL-6" value="+ Method: string&lt;br&gt;+ References: Citation[]" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="Uvi9JcyIBBcx5CK23ZVL-5">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Uvi9JcyIBBcx5CK23ZVL-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="Uvi9JcyIBBcx5CK23ZVL-2" target="Uvi9JcyIBBcx5CK23ZVL-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Uvi9JcyIBBcx5CK23ZVL-8" value="Method&lt;br&gt;controlled by&lt;br&gt;Compound Evidence ontology" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-760" y="120" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Uvi9JcyIBBcx5CK23ZVL-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Uvi9JcyIBBcx5CK23ZVL-5" target="Uvi9JcyIBBcx5CK23ZVL-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Uvi9JcyIBBcx5CK23ZVL-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Uvi9JcyIBBcx5CK23ZVL-6" target="y5VxL8M3IGMAxQPXXkcC-27">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
