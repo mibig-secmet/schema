@@ -6,6 +6,9 @@
     "accession": {
       "$ref": "#/$defs/entryId"
     },
+    "changelog": {
+      "$ref": "/schemas/changelog"
+    },
     "status": {
       "$ref": "#/$defs/status"
     },

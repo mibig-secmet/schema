@@ -83,6 +83,9 @@
         },
         {
           "pattern": "^lotus:Q(\\d+)$"
+        },
+        {
+          "pattern": "^gnps:MSV(\\d+)$"
         }
       ]
     },

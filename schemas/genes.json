@@ -1,0 +1,71 @@
+{
+  "$id": "https://mibig.secondarymetabolites.org/schemas/entry",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {},
+  "$defs": {
+    "addition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "location": {
+          "$ref": "#/$defs/geneLocation"
+        },
+        "translation": {
+          "type": "string"
+        }
+      }
+    },
+    "annotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": ["id"]
+    },
+    "deletion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[^, ]*$"
+    },
+    "geneLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "exons": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/$defs/location"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "strand": {
+          "type": "number",
+          "enum": [-1, 1]
+        }
+      },
+      "required": ["exons", "strand"]
+    }
+  }
+}
