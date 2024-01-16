@@ -1,5 +1,5 @@
 {
-  "$id": "https://mibig.secondarymetabolites.org/schemas/entry",
+  "$id": "https://mibig.secondarymetabolites.org/schemas/genes",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {},
@@ -66,6 +66,27 @@
         }
       },
       "required": ["exons", "strand"]
+    },
+    "tailoringFunction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "function": {
+          "type": "string"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/$defs/citation"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "dbReference": {
+          "type": "string",
+          "pattern": "^MITE(\\d)+$"
+        }
+      }
     }
   }
 }
