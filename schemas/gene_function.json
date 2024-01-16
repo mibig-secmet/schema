@@ -1,0 +1,79 @@
+{
+  "$id": "https://mibig.secondarymetabolites.org/schemas/gene_function",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "function": {
+      "$ref": "#/$defs/function"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "mutation_phenotype": {
+      "$ref": "#/$defs/mutation_phenotype"
+    }
+  },
+  "required": ["function", "evidence"],
+  "$defs": {
+    "function": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": [
+            "Activation / processing",
+            "Precursor",
+            "Precursor biosynthesis",
+            "Regulation",
+            "Resistance/immunity",
+            "Scaffold biosynthesis",
+            "Tailoring",
+            "Transport",
+            "Other"
+          ]
+        },
+        "details": {
+          "type": "string"
+        }
+      },
+      "required": ["name"]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": [
+            "Other in vivo study",
+            "Heterologous expression",
+            "Knock-out",
+            "Activity assay"
+          ]
+        },
+        "citations": {
+          "$ref": "/schemas/common/$defs/citation"
+        }
+      },
+      "required": ["name", "citations"]
+    },
+    "mutation_phenotype": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "phenotype": {
+          "type": "string"
+        },
+        "details": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
