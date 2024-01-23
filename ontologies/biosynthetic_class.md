@@ -2,10 +2,11 @@
 
   - thiotemplated
     - uses condensation domain
-      - Type I
-      - Type II
+      - Type I (modular)
+      - Type II (non-modular)
     - does not use condensation domain
-      - Type III
+      - Type III (non-modular)
+      - Type VI (modular)
   - non-thiotemplated
     - tRNA-independent
       - Type IV
