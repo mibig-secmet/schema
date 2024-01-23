@@ -1,0 +1,29 @@
+# Tailoring reaction types
+
+- Acetylation
+- Acylation
+- Amination
+- Biaryl bond formation
+- Carboxylation
+- Deamination
+- Decarboxylation
+- Dehydration
+- Dehydrogenation
+- Demethylation
+- Dioxygenation
+- Epimerization
+- FADH2 supply for chlorination
+- Glycosylation
+- Halogenation
+- Heterocyclization
+- Hydrolysis
+- Hydroxylation
+- Lasso macrolactam formation
+- Methylation
+- Monooxygenation
+- Oxidation
+- Phosphorylation
+- Prenylation
+- Reduction
+- Sulfation
+- Other
