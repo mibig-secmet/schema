@@ -1,5 +1,5 @@
 {
-  "$id": "https://mibig.secondarymetabolites.org/schemas/genes",
+  "$id": "https://meta.secondarymetabolites.org/schemas/genes",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {},
@@ -28,6 +28,16 @@
         },
         "name": {
           "$ref": "#/$defs/id"
+        },
+        "product": {
+          "type": "string"
+        },
+        "tailoring": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/tailoringFunction"
+          },
+          "uniqueItems": true
         }
       },
       "required": ["id"]
@@ -72,6 +82,38 @@
       "additionalProperties": false,
       "properties": {
         "function": {
+          "type": "string",
+          "enum": [
+            "Acetylation",
+            "Acylation",
+            "Amination",
+            "Biaryl bond formation",
+            "Carboxylation",
+            "Deamination",
+            "Decarboxylation",
+            "Dehydration",
+            "Dehydrogenation",
+            "Demethylation",
+            "Dioxygenation",
+            "Epimerization",
+            "FADH2 supply for chlorination",
+            "Glycosylation",
+            "Halogenation",
+            "Heterocyclization",
+            "Hydrolysis",
+            "Hydroxylation",
+            "Lasso macrolactam formation",
+            "Methylation",
+            "Monooxygenation",
+            "Oxidation",
+            "Phosphorylation",
+            "Prenylation",
+            "Reduction",
+            "Sulfation",
+            "Other"
+          ]
+        },
+        "details": {
           "type": "string"
         },
         "references": {

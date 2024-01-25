@@ -1,7 +1,8 @@
 {
-  "$id": "https://mibig.secondarymetabolites.org/schemas/changelog",
+  "$id": "https://meta.secondarymetabolites.org/schemas/common/changelog",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "releases": {
       "type": "list",

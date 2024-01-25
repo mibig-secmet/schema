@@ -1,13 +1,14 @@
 {
-  "$id": "https://mibig.secondarymetabolites.org/schemas/entry",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/entry",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
   "additionalProperties": false,
   "properties": {
     "accession": {
       "$ref": "#/$defs/entryId"
     },
     "changelog": {
-      "$ref": "/schemas/changelog"
+      "$ref": "/schemas/common/changelog"
     },
     "status": {
       "$ref": "#/$defs/status"
@@ -18,7 +19,7 @@
     "loci": {
       "type": "array",
       "items": {
-        "$ref": "/schemas/locus"
+        "$ref": "/schemas/mibig/locus"
       },
       "minItems": 1,
       "uniqueItems": true
@@ -44,12 +45,12 @@
     "compounds": {
       "type": "array",
       "items": {
-        "$ref": "/schemas/compound"
+        "$ref": "/schemas/mibig/compound"
       },
       "uniqueItems": true
     },
     "taxonomy": {
-      "$ref": "/schemas/taxonomy"
+      "$ref": "/schemas/mibig/taxonomy"
     }
   },
   "$defs": {

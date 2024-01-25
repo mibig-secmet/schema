@@ -1,5 +1,5 @@
 {
-  "$id": "https://mibig.secondarymetabolites.org/schemas/compound",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/compound",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
@@ -107,7 +107,7 @@
         "references": {
           "type": "array",
           "items": {
-            "$ref": "/schemas/common/$defs/citation"
+            "$ref": "/schemas/common/citation"
           },
           "minItems": 1,
           "uniqueItems": true

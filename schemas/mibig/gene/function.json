@@ -1,5 +1,5 @@
 {
-  "$id": "https://mibig.secondarymetabolites.org/schemas/gene_function",
+  "$id": "https://meta.secondarymetabolites.org/schemas/gene_function",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
@@ -72,6 +72,9 @@
         },
         "details": {
           "type": "string"
+        },
+        "citations": {
+          "$ref": "/schemas/common/$defs/citation"
         }
       }
     }

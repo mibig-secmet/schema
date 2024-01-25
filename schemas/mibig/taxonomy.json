@@ -1,6 +1,7 @@
 {
-  "$id": "https://mibig.secondarymetabolites.org/schemas/taxonomy",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/taxonomy",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
   "additionalProperties": false,
   "properties": {
     "name": {
