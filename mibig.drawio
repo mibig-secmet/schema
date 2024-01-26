@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-01-16T08:09:28.593Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.18 Chrome/120.0.6099.199 Electron/28.1.2 Safari/537.36" etag="NgBNbD6nbnQVh5-dCFm8" version="22.1.18" type="device">
+<mxfile host="Electron" modified="2024-01-25T10:16:55.123Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.21 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="hzm3_9rBSs5-7sXvQ2X3" version="22.1.21" type="device">
   <diagram name="Page-1" id="QmS4hE2Vp2O_9ink1kWo">
-    <mxGraphModel dx="2022" dy="725" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2261" dy="870" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -266,9 +266,9 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="I3FBb43yeFQYQSWf5zm1-1" value="Genes" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="590" y="850" width="200" height="120" as="geometry" />
+          <mxGeometry x="580" y="850" width="200" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="I3FBb43yeFQYQSWf5zm1-2" value="+ toAdd: GeneAddition[]&lt;br&gt;+ toRemove: GeneDeletion[]&lt;br&gt;+ annotations: GeneAnnotation[]" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="I3FBb43yeFQYQSWf5zm1-1" vertex="1">
+        <mxCell id="I3FBb43yeFQYQSWf5zm1-2" value="+ toAdd: GeneAddition[]&lt;br&gt;+ toRemove: GeneDeletion[]&lt;br&gt;+ annotations: GeneAnnotation[]&lt;br&gt;+ domains: GeneDomain[]" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="I3FBb43yeFQYQSWf5zm1-1" vertex="1">
           <mxGeometry y="50" width="200" height="70" as="geometry" />
         </mxCell>
         <mxCell id="I3FBb43yeFQYQSWf5zm1-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="I3FBb43yeFQYQSWf5zm1-3" target="I3FBb43yeFQYQSWf5zm1-6" edge="1">
@@ -318,7 +318,7 @@
         <mxCell id="I3FBb43yeFQYQSWf5zm1-19" value="+ Function: string&lt;br&gt;+ References: Citation[]&lt;br&gt;+ DbReference: MITE ID" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="I3FBb43yeFQYQSWf5zm1-18" vertex="1">
           <mxGeometry y="50" width="160" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="-FYlpnh0TZJ50lnJmgKP-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="I3FBb43yeFQYQSWf5zm1-20" target="-FYlpnh0TZJ50lnJmgKP-1">
+        <mxCell id="-FYlpnh0TZJ50lnJmgKP-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="I3FBb43yeFQYQSWf5zm1-20" target="-FYlpnh0TZJ50lnJmgKP-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="I3FBb43yeFQYQSWf5zm1-20" value="GeneFunction" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -327,14 +327,17 @@
         <mxCell id="I3FBb43yeFQYQSWf5zm1-21" value="+ Function: string&lt;br&gt;+ Evidence: GeneFunctionEvidence[]&lt;br&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="I3FBb43yeFQYQSWf5zm1-20" vertex="1">
           <mxGeometry y="50" width="210" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="-FYlpnh0TZJ50lnJmgKP-1" value="Function controlled by gene function ontology" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="-FYlpnh0TZJ50lnJmgKP-1" value="Function controlled by gene function ontology" style="shape=note;size=20;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1280" y="1069" width="100" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="-FYlpnh0TZJ50lnJmgKP-3" value="Entity" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1040" y="1280" width="160" height="120" as="geometry" />
+        <mxCell id="-FYlpnh0TZJ50lnJmgKP-3" value="Entity" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1020" y="1280" width="160" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="-FYlpnh0TZJ50lnJmgKP-4" value="+Attribute1&#xa;+Attribute2&#xa;+Attribute3" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="-FYlpnh0TZJ50lnJmgKP-3">
+        <mxCell id="-FYlpnh0TZJ50lnJmgKP-4" value="+Attribute1&#xa;+Attribute2&#xa;+Attribute3" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="-FYlpnh0TZJ50lnJmgKP-3" vertex="1">
           <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="DFOZwkv23SUet3S3xMpu-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.012;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="I3FBb43yeFQYQSWf5zm1-2" target="I3FBb43yeFQYQSWf5zm1-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
