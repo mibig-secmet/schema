@@ -1,0 +1,60 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/nrps",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "subclass": {
+      "type": "string",
+      "enum": ["Type I", "Type II", "Type III", "Type IV", "Type V", "Type VI"]
+    },
+    "cyclic": {
+      "type": "boolean"
+    },
+    "lipid_moiety": {
+      "$ref": "/schemas/common/smiles"
+    },
+    "modules": {},
+    "release_type": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/mibig/biosynthesis/common/release_type"
+      },
+      "uniqueItems": true
+    },
+    "thioesterases": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/mibig/biosynthesis/common/thioesterase"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "module": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "active": {
+          "type": "boolean"
+        },
+        "genes": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/gene_id"
+          }
+        }
+      }
+    },
+    "a_domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {}
+    },
+    "c_domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {}
+    }
+  }
+}

@@ -40,6 +40,17 @@
     },
     "biosyntheticClasses": {
       "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "/schemas/mibig/biosynthesis/nrps" },
+          { "$ref": "/schemas/mibig/biosynthesis/other" },
+          { "$ref": "/schemas/mibig/biosynthesis/pks" },
+          { "$ref": "/schemas/mibig/biosynthesis/ripp" },
+          { "$ref": "/schemas/mibig/biosynthesis/saccharide" },
+          { "$ref": "/schemas/mibig/biosynthesis/terpene" }
+        ]
+      },
+      "minItems": 1,
       "uniqueItems": true
     },
     "compounds": {

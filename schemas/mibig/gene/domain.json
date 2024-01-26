@@ -20,14 +20,23 @@
   },
   "required": ["location"],
   "$defs": {
-    "substrate": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "evidence": {
-          "type": "array",
-          "items": {}
-        }
+    "substrates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "/schema/mibig/common/substrate_evidence"
+            }
+          },
+          "structure": {
+            "$ref": "/schemas/common/smiles"
+          }
+        },
+        "required": ["evidence", "structure"]
       }
     }
   }

@@ -1,0 +1,23 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/common/release_type",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "enum": [
+        "Claisen condensation",
+        "Hydrolysis",
+        "Macrolactamization",
+        "Macrolactonization",
+        "None",
+        "Other",
+        "Reductive release"
+      ]
+    },
+    "details": {
+      "type": "string"
+    }
+  }
+}
