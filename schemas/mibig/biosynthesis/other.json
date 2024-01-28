@@ -1,0 +1,14 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/other",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "subclass": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/saccharide",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "glycosyltransferases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/glycosyltransferase"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "subclass": {
+      "type": "string",
+      "enum": []
+    },
+    "subclusters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/subcluster"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": ["subclass"],
+  "$defs": {
+    "glycosyltransferase": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string",
+              "enum": [
+                "Sequence-based prediction",
+                "Structure-based inference",
+                "Knock-out construct",
+                "Activity assay"
+              ]
+            },
+            "references": {
+              "type": "array",
+              "items": {
+                "$ref": "/schemas/common/citation"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": ["name", "references"]
+        },
+        "gene": {
+          "$ref": "/schemas/common/gene_id"
+        },
+        "specificity": {
+          "$ref": "/schemas/common/smiles"
+        }
+      },
+      "required": ["gene", "specificity", "evidence"]
+    },
+    "subcluster": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "specificity": {
+          "$ref": "/schemas/common/smiles"
+        },
+        "genes": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/gene_id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/citation"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
