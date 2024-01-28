@@ -86,6 +86,9 @@
         },
         {
           "pattern": "^gnps:MSV(\\d+)$"
+        },
+        {
+          "pattern": "^cyanometdb:CyanoMetDB_(\\d{4,4})$"
         }
       ]
     },
