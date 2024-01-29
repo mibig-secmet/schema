@@ -40,7 +40,7 @@
   "$defs": {
     "evidenceCode": {
       "type": "string",
-      "oneOf": [
+      "enum": [
         "Homology-based prediction",
         "Correlation of genomic and metabolomic data",
         "Gene expression correlated with compound production",
