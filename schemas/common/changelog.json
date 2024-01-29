@@ -8,9 +8,12 @@
       "type": "array",
       "items": {
         "$ref": "#/$defs/release"
-      }
+      },
+      "minItems": 1,
+      "uniqueItems": true
     }
   },
+  "required": ["releases"],
   "$defs": {
     "entry": {
       "type": "object",
@@ -20,19 +23,27 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/submitter"
-          }
+          },
+          "minItems": 1,
+          "uniqueItems": true
         },
         "reviewers": {
           "type": "array",
           "items": {
             "$ref": "#/$defs/submitter"
-          }
+          },
+          "minItems": 1,
+          "uniqueItems": true
         },
         "timestamp": {
           "type": "string",
           "format": "date-time"
+        },
+        "comment": {
+          "type": "string"
         }
-      }
+      },
+      "required": ["contributors", "reviewers", "timestamp", "comment"]
     },
     "release": {
       "type": "object",
@@ -50,9 +61,12 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/entry"
-          }
+          },
+          "minItems": 1,
+          "uniqueItems": true
         }
-      }
+      },
+      "required": ["version", "timestamp", "entries"]
     },
     "submitter": {
       "type": "string",
