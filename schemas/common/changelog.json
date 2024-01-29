@@ -5,7 +5,7 @@
   "additionalProperties": false,
   "properties": {
     "releases": {
-      "type": "list",
+      "type": "array",
       "items": {
         "$ref": "#/$defs/release"
       }
@@ -47,7 +47,7 @@
           "format": "date-time"
         },
         "entries": {
-          "type": "list",
+          "type": "array",
           "items": {
             "$ref": "#/$defs/entry"
           }
