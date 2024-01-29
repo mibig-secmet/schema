@@ -38,20 +38,8 @@
       },
       "uniqueItems": true
     },
-    "biosyntheticClasses": {
-      "type": "array",
-      "items": {
-        "oneOf": [
-          { "$ref": "/schemas/mibig/biosynthesis/nrps" },
-          { "$ref": "/schemas/mibig/biosynthesis/other" },
-          { "$ref": "/schemas/mibig/biosynthesis/pks" },
-          { "$ref": "/schemas/mibig/biosynthesis/ripp" },
-          { "$ref": "/schemas/mibig/biosynthesis/saccharide" },
-          { "$ref": "/schemas/mibig/biosynthesis/terpene" }
-        ]
-      },
-      "minItems": 1,
-      "uniqueItems": true
+    "biosynthesis": {
+      "$ref": "/schemas/mibig/biosynthesis/biosynthesis"
     },
     "compounds": {
       "type": "array",
@@ -67,7 +55,7 @@
   "$defs": {
     "completeness": {
       "type": "string",
-      "oneOf": ["unknown", "incomplete", "complete"]
+      "enum": ["unknown", "incomplete", "complete"]
     },
     "entryId": {
       "type": "string",
@@ -75,11 +63,11 @@
     },
     "quality": {
       "type": "string",
-      "oneOf": ["low", "medium", "high"]
+      "enum": ["low", "medium", "high"]
     },
     "status": {
       "type": "string",
-      "oneOf": ["pending", "embargoed", "active", "retired"]
+      "enum": ["pending", "embargoed", "active", "retired"]
     }
   }
 }
