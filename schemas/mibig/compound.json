@@ -16,6 +16,9 @@
     "bioactivities": {
       "type": "array"
     },
+    "cyclic": {
+      "type": "boolean"
+    },
     "moieties": {
       "type": "array"
     },
@@ -61,7 +64,7 @@
   "$defs": {
     "class": {
       "type": "string",
-      "oneOf": ["alkaloid", "nucleoside", "peptide"]
+      "enum": ["alkaloid", "nucleoside", "peptide"]
     },
     "databaseId": {
       "type": "string",
@@ -98,7 +101,7 @@
       "properties": {
         "method": {
           "type": "string",
-          "oneOf": [
+          "enum": [
             "NMR",
             "Mass spectrometry",
             "MS/MS",
@@ -124,7 +127,7 @@
       "properties": {
         "ion": {
           "type": "string",
-          "oneOf": ["[M+H]+", "[M-H]-", "[M+Na]+", "other"]
+          "enum": ["[M+H]+", "[M-H]-", "[M+Na]+", "other"]
         },
         "details": {
           "type": "string"
