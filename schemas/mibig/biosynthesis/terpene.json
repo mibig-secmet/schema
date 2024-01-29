@@ -3,5 +3,40 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "properties": {}
+  "properties": {
+    "class": {
+      "const": "terpene"
+    },
+    "subclass": {
+      "type": "string",
+      "enum": [
+        "Diterpene",
+        "Hemiterpene",
+        "Monoterpene",
+        "Sesquiterpene",
+        "Triterpene"
+      ]
+    },
+    "prenyltransferases": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/common/gene_id.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "synthases_cyclases": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/common/gene_id.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "precursor": {
+      "type": "string",
+      "enum": ["DMAPP", "FPP", "GGPP", "GPP", "IPP"]
+    }
+  },
+  "required": ["class"]
 }

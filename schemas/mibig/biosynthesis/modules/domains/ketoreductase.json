@@ -1,0 +1,30 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/modules/domains/ketoreductase.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "gene": {
+      "$ref": "/schemas/common/gene_id.json"
+    },
+    "location": {
+      "$ref": "/schemas/common/location.json"
+    },
+    "inactive": {
+      "type": "boolean"
+    },
+    "stereochemistry": {
+      "type": "string",
+      "enum": ["A1", "A2", "B1", "B2", "C1", "C2"]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/mibig/common/substrate_evidence.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": ["gene", "location"]
+}

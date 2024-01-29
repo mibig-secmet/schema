@@ -1,5 +1,5 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/compound",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/compound.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
@@ -23,7 +23,7 @@
       "type": "array"
     },
     "structure": {
-      "$ref": "#/$defs/smiles"
+      "$ref": "/schemas/common/smiles.json"
     },
     "synonyms": {
       "type": "array",
@@ -113,7 +113,7 @@
         "references": {
           "type": "array",
           "items": {
-            "$ref": "/schemas/common/citation"
+            "$ref": "/schemas/common/citation.json"
           },
           "minItems": 1,
           "uniqueItems": true
@@ -148,10 +148,6 @@
     "name": {
       "type": "string",
       "pattern": "^[a-zA-Zα-ωΑ-Ω0-9\\[\\]'()/&,. +-]+$"
-    },
-    "smiles": {
-      "pattern": "^[\\[\\]a-zA-Z0-9\\@()=\\/\\\\#+.%*-]+$",
-      "type": "string"
     }
   }
 }

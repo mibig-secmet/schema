@@ -1,5 +1,5 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/common/substrate_evidence",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/common/substrate_evidence.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
@@ -29,11 +29,11 @@
     "references": {
       "type": "array",
       "items": {
-        "$ref": "/schemas/common/citation"
+        "$ref": "/schemas/common/citation.json"
       },
       "minItems": 1,
       "uniqueItems": true
     }
   },
-  "required": ["name", "citations"]
+  "required": ["name", "references"]
 }

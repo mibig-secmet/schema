@@ -1,5 +1,5 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/common/release_type",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/common/release_type.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
@@ -18,6 +18,15 @@
     },
     "details": {
       "type": "string"
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/common/citation.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
     }
-  }
+  },
+  "required": ["name"]
 }

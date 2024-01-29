@@ -1,0 +1,47 @@
+{
+  "class": "ribosomal",
+  "subclass": {
+    "class": "RiPP",
+    "subclass": "Lanthipeptide",
+    "details": "Class I",
+    "peptidases": ["ADJ56357.1"],
+    "precursors": [
+      {
+        "gene": "ADJ56352.1",
+        "core_sequence": "ITSISLCTPGCKTGALMGCNMKTATCHCSIHVSK",
+        "crosslinks": [
+          {
+            "type": "thioether",
+            "from": 3,
+            "to": 7
+          },
+          {
+            "type": "thioether",
+            "from": 13,
+            "to": 19
+          },
+          {
+            "type": "thioether",
+            "from": 23,
+            "to": 26
+          },
+          {
+            "type": "thioether",
+            "from": 8,
+            "to": 11
+          },
+          {
+            "type": "thioether",
+            "from": 25,
+            "to": 28
+          }
+        ],
+        "leader_cleavage_location": {
+          "from": 22,
+          "to": 23
+        },
+        "recognition_motif": "FNLD"
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/entry",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/entry.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
@@ -8,7 +8,7 @@
       "$ref": "#/$defs/entryId"
     },
     "changelog": {
-      "$ref": "/schemas/common/changelog"
+      "$ref": "/schemas/common/changelog.json"
     },
     "status": {
       "$ref": "#/$defs/status"
@@ -19,7 +19,7 @@
     "loci": {
       "type": "array",
       "items": {
-        "$ref": "/schemas/mibig/locus"
+        "$ref": "/schemas/mibig/locus.json"
       },
       "minItems": 1,
       "uniqueItems": true
@@ -39,17 +39,17 @@
       "uniqueItems": true
     },
     "biosynthesis": {
-      "$ref": "/schemas/mibig/biosynthesis/biosynthesis"
+      "$ref": "/schemas/mibig/biosynthesis/biosynthesis.json"
     },
     "compounds": {
       "type": "array",
       "items": {
-        "$ref": "/schemas/mibig/compound"
+        "$ref": "/schemas/mibig/compound.json"
       },
       "uniqueItems": true
     },
     "taxonomy": {
-      "$ref": "/schemas/mibig/taxonomy"
+      "$ref": "/schemas/mibig/taxonomy.json"
     }
   },
   "$defs": {

@@ -1,219 +1,30 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/nrps",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/nrps.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
   "properties": {
+    "class": {
+      "const": "NRPS"
+    },
     "subclass": {
       "type": "string",
       "enum": ["Type I", "Type II", "Type III", "Type IV", "Type V", "Type VI"]
     },
-    "cyclic": {
-      "type": "boolean"
-    },
-    "lipid_moiety": {
-      "$ref": "/schemas/common/smiles"
-    },
-    "modules": {},
     "release_type": {
       "type": "array",
       "items": {
-        "$ref": "/schemas/mibig/biosynthesis/common/release_type"
+        "$ref": "/schemas/mibig/biosynthesis/common/release_type.json"
       },
       "uniqueItems": true
     },
     "thioesterases": {
       "type": "array",
       "items": {
-        "$ref": "/schemas/mibig/biosynthesis/common/thioesterase"
+        "$ref": "/schemas/mibig/biosynthesis/common/thioesterase.json"
       },
       "uniqueItems": true
     }
   },
-  "$defs": {
-    "module": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "active": {
-          "type": "boolean"
-        },
-        "a_domain": {
-          "$ref": "#/$defs/a_domain"
-        },
-        "c_domain": {
-          "$ref": "#/$defs/c_domain"
-        },
-        "comments": {
-          "type": "string"
-        },
-        "genes": {
-          "type": "array",
-          "items": {
-            "$ref": "/schemas/common/gene_id"
-          }
-        },
-        "integrated_monomers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/monomer"
-          },
-          "uniqueItems": true
-        },
-        "modification_domains": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "Amination",
-              "Aminotransferase",
-              "Cyclase",
-              "Epimerization",
-              "Heterocyclization",
-              "Hydroxylation",
-              "beta-hydroxylation",
-              "Keto reductase",
-              "Methylation",
-              "N-methylation",
-              "Oxidation"
-            ]
-          }
-        },
-        "name": {
-          "type": "string"
-        }
-      }
-    },
-    "a_domain": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "evidence": {
-          "type": "array",
-          "items": {
-            "$ref": "/schemas/mibig/common/substrate_evidence"
-          }
-        },
-        "precursor_biosynthesis": {
-          "type": "array",
-          "items": {
-            "$ref": "/schemas/common/gene_id"
-          }
-        },
-        "substrates": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/substrate"
-          }
-        }
-      },
-      "required": ["evidence"]
-    },
-    "c_domain": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "subtype": {
-          "type": "string",
-          "enum": [
-            "Dual",
-            "Starter",
-            "LCL",
-            "DCL",
-            "Ester bond-forming",
-            "Heterocyclization"
-          ]
-        },
-        "references": {
-          "type": "array",
-          "items": {
-            "$ref": "/schemas/common/citation"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        }
-      },
-      "required": ["subtype", "references"]
-    },
-    "monomer": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "evidence": {
-          "type": "array",
-          "items": {
-            "$ref": "/schemas/mibig/common/substrate_evidence"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "name": {
-          "type": "string"
-        },
-        "structure": {
-          "$ref": "/schemas/common/smiles"
-        }
-      },
-      "required": ["evidence", "name", "structure"]
-    },
-    "non_canonical": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "evidence": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "name": {
-                "type": "string",
-                "enum": [
-                  "Sequence-based prediction",
-                  "Structure-based inference",
-                  "Activity assay"
-                ]
-              },
-              "references": {
-                "type": "array",
-                "items": {
-                  "$ref": "/schemas/common/citation"
-                },
-                "minItems": 1,
-                "uniqueItems": true
-              }
-            },
-            "required": ["name", "references"]
-          }
-        },
-        "iterations": {
-          "type": "number",
-          "minimum": 0
-        },
-        "non_elongating": {
-          "type": "boolean"
-        },
-        "skipped": {
-          "type": "boolean"
-        }
-      },
-      "required": ["evidence"]
-    },
-    "substrate": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "proteinogenic": {
-          "type": "boolean"
-        },
-        "structure": {
-          "$ref": "/schemas/common/smiles"
-        }
-      },
-      "required": ["name", "proteinogenic", "structure"]
-    }
-  }
+  "required": ["class", "subclass"]
 }

@@ -42,7 +42,24 @@
       - Class IV
       - Class V
     - YcaO-derived???
+      - Bottromycin
+      - LAP
+      - Thiopeptide
+      - Thioamidide
     - ...
+    - Atropopeptide
+    - Biarylitide
+    - Cyanobactin
+    - Dikaritin
+    - Glycocin
+    - Head-to-tail cyclized peptide
+    - Lasso peptide
+    - Linaridin
+    - Microcin
+    - Microviridin
+    - Proteusin
+    - Sactipeptide
+    - Other
 
 - **Saccharide**
 - **Terpene**

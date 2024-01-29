@@ -1,5 +1,5 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/genes",
+  "$id": "https://meta.secondarymetabolites.org/schemas/genes.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {},
@@ -65,7 +65,7 @@
         "exons": {
           "type": "array",
           "items": {
-            "$ref": "/schemas/common/$defs/location"
+            "$ref": "/schemas/common/location.json"
           },
           "minItems": 1,
           "uniqueItems": true

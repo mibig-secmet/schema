@@ -1,5 +1,5 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/common/citation",
+  "$id": "https://meta.secondarymetabolites.org/schemas/common/citation.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "string",
   "oneOf": [

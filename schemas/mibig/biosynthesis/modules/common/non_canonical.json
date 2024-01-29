@@ -1,0 +1,45 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/modules/common/non_canonical",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "Sequence-based prediction",
+              "Structure-based inference",
+              "Activity assay"
+            ]
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "$ref": "/schemas/common/citation.json"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": ["name", "references"]
+      }
+    },
+    "iterations": {
+      "type": "number",
+      "minimum": 0
+    },
+    "non_elongating": {
+      "type": "boolean"
+    },
+    "skipped": {
+      "type": "boolean"
+    }
+  },
+  "required": ["evidence"]
+}

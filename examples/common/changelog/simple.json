@@ -1,0 +1,16 @@
+{
+  "releases": [
+    {
+      "version": "3.1",
+      "timestamp": "2024-01-29 09:10:11",
+      "entries": [
+        {
+          "contributors": ["AAAAAAAAAAAAAAAAAAAAAAAA"],
+          "reviewers": ["BBBBBBBBBBBBBBBBBBBBBBBB"],
+          "timestamp": "2024-01-29 09:10:11",
+          "comment": "Contributed to MIBiG"
+        }
+      ]
+    }
+  ]
+}

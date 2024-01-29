@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2024-01-25T10:16:55.123Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.21 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="hzm3_9rBSs5-7sXvQ2X3" version="22.1.21" type="device">
+<mxfile host="Electron" modified="2024-01-29T07:59:20.645Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="w8cqxUk1jaTn5PPrpAS2" version="23.0.2" type="device">
   <diagram name="Page-1" id="QmS4hE2Vp2O_9ink1kWo">
     <mxGraphModel dx="2261" dy="870" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -83,7 +83,7 @@
         <mxCell id="y5VxL8M3IGMAxQPXXkcC-3" value="Entry" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="20" y="880" width="250" height="210" as="geometry" />
         </mxCell>
-        <mxCell id="y5VxL8M3IGMAxQPXXkcC-4" value="+ Accession: EntryID&lt;br&gt;+ Status: EntryStatus&lt;br&gt;+ Completeness: EntryCompleteness&lt;br&gt;+ Loci: Locus[]&lt;br&gt;+ Retirement reasons: string[]&lt;br&gt;+ See also: EntryID[]&lt;br&gt;+ Biosynthetic classes: BiosyntheticClass[]&lt;br&gt;+ Compounds: Compound[]&lt;br&gt;+ Taxonomy: Taxonomy&lt;br&gt;+ Comments: string" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="y5VxL8M3IGMAxQPXXkcC-3" vertex="1">
+        <mxCell id="y5VxL8M3IGMAxQPXXkcC-4" value="+ Accession: EntryID&lt;br&gt;+ Status: EntryStatus&lt;br&gt;+ Completeness: EntryCompleteness&lt;br&gt;+ Loci: Locus[]&lt;br&gt;+ Retirement reasons: string[]&lt;br&gt;+ See also: EntryID[]&lt;br&gt;+ Biosynthesis: Biosynthesis&lt;br&gt;+ Compounds: Compound[]&lt;br&gt;+ Taxonomy: Taxonomy&lt;br&gt;+ Comments: string" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="y5VxL8M3IGMAxQPXXkcC-3" vertex="1">
           <mxGeometry y="50" width="250" height="160" as="geometry" />
         </mxCell>
         <mxCell id="y5VxL8M3IGMAxQPXXkcC-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="y5VxL8M3IGMAxQPXXkcC-4" target="y5VxL8M3IGMAxQPXXkcC-2" edge="1">
@@ -232,7 +232,7 @@
         <mxCell id="Uvi9JcyIBBcx5CK23ZVL-1" value="Compound" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-518" y="500" width="210" height="270" as="geometry" />
         </mxCell>
-        <mxCell id="Uvi9JcyIBBcx5CK23ZVL-2" value="+ Name: CompoundName&lt;br&gt;+ Classes: CompoundClass[]&lt;br&gt;+ Bioactivities: Bioactivity[]&lt;br&gt;+ Moieties: Moiety[]&lt;br&gt;+ Structure: SMILES&lt;br&gt;+ Synonyms: string[]&lt;br&gt;+ Targets: Target[]&lt;br&gt;+ Database IDs: DatabaseId[]&lt;br&gt;+ Evidence: CompoundEvidence[]&lt;br&gt;+ Mass: number&lt;br&gt;+ Ion Type: string&lt;br&gt;+ Formula: string" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="Uvi9JcyIBBcx5CK23ZVL-1" vertex="1">
+        <mxCell id="Uvi9JcyIBBcx5CK23ZVL-2" value="+ Name: CompoundName&lt;br&gt;+ Classes: CompoundClass[]&lt;br&gt;+ Bioactivities: Bioactivity[]&lt;br&gt;+ Cyclic: boolean&lt;br&gt;+ Moieties: Moiety[]&lt;br&gt;+ Structure: SMILES&lt;br&gt;+ Synonyms: string[]&lt;br&gt;+ Targets: Target[]&lt;br&gt;+ Database IDs: DatabaseId[]&lt;br&gt;+ Evidence: CompoundEvidence[]&lt;br&gt;+ Mass: number&lt;br&gt;+ Ion Type: string&lt;br&gt;+ Formula: string" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="Uvi9JcyIBBcx5CK23ZVL-1" vertex="1">
           <mxGeometry y="50" width="210" height="220" as="geometry" />
         </mxCell>
         <mxCell id="Uvi9JcyIBBcx5CK23ZVL-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.35;entryY=1.027;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="Uvi9JcyIBBcx5CK23ZVL-1" target="2XhkViiyKJ3v6HBh6uYh-2" edge="1">
@@ -338,6 +338,30 @@
         </mxCell>
         <mxCell id="DFOZwkv23SUet3S3xMpu-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.012;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="I3FBb43yeFQYQSWf5zm1-2" target="I3FBb43yeFQYQSWf5zm1-16" edge="1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iZWbwrjWMv-UtS0F3dMD-1" value="Biosynthesis" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="314" y="1040" width="196" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="iZWbwrjWMv-UtS0F3dMD-2" value="+ Classes: BiosyntheticClasses[]&lt;br&gt;+ Modules: Modules[]&lt;br&gt;+ Paths: BiosynteticPath[]" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="iZWbwrjWMv-UtS0F3dMD-1" vertex="1">
+          <mxGeometry y="50" width="196" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iZWbwrjWMv-UtS0F3dMD-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.014;entryY=0.184;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="y5VxL8M3IGMAxQPXXkcC-3" target="iZWbwrjWMv-UtS0F3dMD-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2QyzhiXPhY9pQ5z5UrF4-1" value="BiosyntheticPath" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1200" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2QyzhiXPhY9pQ5z5UrF4-2" value="+ Products: string[]&lt;br&gt;+ Steps: Step[]&lt;br&gt;+ References: Citation[]" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="2QyzhiXPhY9pQ5z5UrF4-1">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2QyzhiXPhY9pQ5z5UrF4-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.581;entryY=-0.008;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="iZWbwrjWMv-UtS0F3dMD-2" target="2QyzhiXPhY9pQ5z5UrF4-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2QyzhiXPhY9pQ5z5UrF4-4" value="Step" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1200" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2QyzhiXPhY9pQ5z5UrF4-5" value="+Attribute1&#xa;+Attribute2&#xa;+Attribute3" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="2QyzhiXPhY9pQ5z5UrF4-4">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

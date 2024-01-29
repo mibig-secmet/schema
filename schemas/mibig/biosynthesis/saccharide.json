@@ -1,9 +1,12 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/saccharide",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/saccharide.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
   "properties": {
+    "class": {
+      "const": "saccharide"
+    },
     "glycosyltransferases": {
       "type": "array",
       "items": {
@@ -25,7 +28,7 @@
       "uniqueItems": true
     }
   },
-  "required": ["subclass"],
+  "required": ["glycosyltransferases"],
   "$defs": {
     "glycosyltransferase": {
       "type": "object",
@@ -47,7 +50,7 @@
             "references": {
               "type": "array",
               "items": {
-                "$ref": "/schemas/common/citation"
+                "$ref": "/schemas/common/citation.json"
               },
               "minItems": 1,
               "uniqueItems": true
@@ -56,25 +59,25 @@
           "required": ["name", "references"]
         },
         "gene": {
-          "$ref": "/schemas/common/gene_id"
+          "$ref": "/schemas/common/gene_id.json"
         },
         "specificity": {
-          "$ref": "/schemas/common/smiles"
+          "$ref": "/schemas/common/smiles.json"
         }
       },
-      "required": ["gene", "specificity", "evidence"]
+      "required": ["gene", "evidence"]
     },
     "subcluster": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "specificity": {
-          "$ref": "/schemas/common/smiles"
+          "$ref": "/schemas/common/smiles.json"
         },
         "genes": {
           "type": "array",
           "items": {
-            "$ref": "/schemas/common/gene_id"
+            "$ref": "/schemas/common/gene_id.json"
           },
           "minItems": 1,
           "uniqueItems": true
@@ -82,7 +85,7 @@
         "references": {
           "type": "array",
           "items": {
-            "$ref": "/schemas/common/citation"
+            "$ref": "/schemas/common/citation.json"
           },
           "minItems": 1,
           "uniqueItems": true

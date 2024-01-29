@@ -1,0 +1,40 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/biosynthesis",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "classes": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "/schemas/mibig/biosynthesis/nrps" },
+          { "$ref": "/schemas/mibig/biosynthesis/other" },
+          { "$ref": "/schemas/mibig/biosynthesis/pks" },
+          { "$ref": "/schemas/mibig/biosynthesis/ribosomal" },
+          { "$ref": "/schemas/mibig/biosynthesis/saccharide" },
+          { "$ref": "/schemas/mibig/biosynthesis/terpene" }
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "/schemas/mibig/biosynthesis/modules/cal" },
+          { "$ref": "/schemas/mibig/biosynthesis/modules/nrps_type1" },
+          { "$ref": "/schemas/mibig/biosynthesis/modules/nrps_type6" },
+          { "$ref": "/schemas/mibig/biosynthesis/modules/other" },
+          { "$ref": "/schemas/mibig/biosynthesis/modules/pks_iterative" },
+          { "$ref": "/schemas/mibig/biosynthesis/modules/pks_modular" },
+          { "$ref": "/schemas/mibig/biosynthesis/modules/pks_trans_at" }
+        ]
+      }
+    },
+    "paths": {
+      "type": "array"
+    }
+  }
+}

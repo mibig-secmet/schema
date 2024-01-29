@@ -1,0 +1,22 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/modules/domains/thioesterase.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "const": "thioesterase"
+    },
+    "gene": {
+      "$ref": "/schemas/common/gene_id.json"
+    },
+    "location": {
+      "$ref": "/schemas/common/location.json"
+    },
+    "subtype": {
+      "type": "string",
+      "enum": ["Type I", "Type II"]
+    }
+  },
+  "required": ["type", "gene", "location"]
+}

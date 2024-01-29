@@ -1,5 +1,5 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/gene_function",
+  "$id": "https://meta.secondarymetabolites.org/schemas/gene_function.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
@@ -57,8 +57,8 @@
             "Activity assay"
           ]
         },
-        "citations": {
-          "$ref": "/schemas/common/$defs/citation"
+        "references": {
+          "$ref": "/schemas/common/citation.json"
         }
       },
       "required": ["name", "citations"]
@@ -73,8 +73,8 @@
         "details": {
           "type": "string"
         },
-        "citations": {
-          "$ref": "/schemas/common/$defs/citation"
+        "references": {
+          "$ref": "/schemas/common/citation.json"
         }
       }
     }

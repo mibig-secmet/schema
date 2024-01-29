@@ -1,24 +1,19 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/gene_domains",
+  "$id": "https://meta.secondarymetabolites.org/schemas/gene_domains.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
     "location": {
-      "$ref": "/schemas/common/$defs/location"
+      "$ref": "/schemas/common/location.json"
     },
     "name": {
       "type": "string"
     },
-    "evidence": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/evidence"
-      },
-      "minItems": 1,
-      "uniqueItems": true
+    "substrates": {
+      "$ref": "#/$defs/substrates"
     }
   },
-  "required": ["location"],
+  "required": ["location", "name"],
   "$defs": {
     "substrates": {
       "type": "array",
@@ -29,11 +24,11 @@
           "evidence": {
             "type": "array",
             "items": {
-              "$ref": "/schema/mibig/common/substrate_evidence"
+              "$ref": "/schema/mibig/common/substrate_evidence.json"
             }
           },
           "structure": {
-            "$ref": "/schemas/common/smiles"
+            "$ref": "/schemas/common/smiles.json"
           }
         },
         "required": ["evidence", "structure"]

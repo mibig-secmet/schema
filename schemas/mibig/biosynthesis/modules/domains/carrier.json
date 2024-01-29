@@ -1,0 +1,36 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/pks",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "const": "carrier"
+    },
+    "subtype": {
+      "type": "string",
+      "enum": ["ACP", "PCP"]
+    },
+    "gene": {
+      "$ref": "/schemas/common/gene_id.json"
+    },
+    "location": {
+      "$ref": "/schemas/common/location.json"
+    },
+    "inactive": {
+      "type": "boolean"
+    },
+    "beta_branching": {
+      "type": "boolean"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/mibig/common/substrate_evidence.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": ["type", "gene", "location"]
+}

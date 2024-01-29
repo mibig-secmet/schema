@@ -4,11 +4,16 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
+    "class": {
+      "const": "other"
+    },
     "subclass": {
-      "type": "string"
+      "type": "string",
+      "enum": ["aminocoumarin", "cyclitol", "other"]
     },
     "details": {
       "type": "string"
     }
-  }
+  },
+  "required": ["class", "subclass"]
 }

@@ -1,0 +1,8 @@
+{
+  "class": "ribosomal",
+  "subclass": {
+    "class": "RiPP",
+    "subclass": "Lanthipeptide",
+    "details": "Class I"
+  }
+}

@@ -1,7 +1,128 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/ribosomal",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/ribosomal.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "properties": {}
+  "properties": {
+    "class": {
+      "const": "ribosomal"
+    },
+    "subclass": {
+      "oneOf": [{ "$ref": "#/$defs/RiPP" }, { "$ref": "#/$defs/unmodified" }]
+    }
+  },
+  "required": ["class", "subclass"],
+  "$defs": {
+    "precursor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "gene": {
+          "$ref": "/schemas/common/gene_id.json"
+        },
+        "core_sequence": {
+          "type": "string"
+        },
+        "leader_cleavage_location": {
+          "$ref": "/schemas/common/location.json"
+        },
+        "follower_cleavage_location": {
+          "$ref": "/schemas/common/location.json"
+        },
+        "crosslinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "from": {
+                "type": "number",
+                "minimum": 1
+              },
+              "to": {
+                "type": "number",
+                "minimum": 2
+              },
+              "type": {
+                "type": "string",
+                "enum": ["ether", "thioether", "other"]
+              },
+              "details": {
+                "type": "string"
+              }
+            }
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "recognition_motif": {
+          "type": "string"
+        }
+      },
+      "required": ["gene", "core_sequence"]
+    },
+    "RiPP": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "class": {
+          "const": "RiPP"
+        },
+        "subclass": {
+          "type": "string",
+          "enum": [
+            "Atropopeptide",
+            "Biarylitide",
+            "Bottromycin",
+            "Cyanobactin",
+            "Dikaritin",
+            "Glycocin",
+            "Head-to-tail cyclized peptide",
+            "Lanthipeptide",
+            "LAP",
+            "Lassopeptide",
+            "Linaridin",
+            "Microcin",
+            "Microviridin",
+            "Proteusin",
+            "Sactipeptide",
+            "Thiopeptide",
+            "Other"
+          ]
+        },
+        "details": {
+          "type": "string"
+        },
+        "peptidases": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/gene_id.json"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "precursors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/precursor"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": ["class", "subclass"]
+    },
+    "unmodified": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "class": {
+          "const": "ribosomal unmodified"
+        },
+        "subclass": {
+          "type": "string"
+        }
+      }
+    }
+  }
 }
