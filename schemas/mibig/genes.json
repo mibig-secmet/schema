@@ -2,14 +2,47 @@
   "$id": "https://meta.secondarymetabolites.org/schemas/genes.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
-  "properties": {},
+  "properties": {
+    "toAdd": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/addition"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "toDelete": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/deletion"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/annotation"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "domains": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/mibig/gene/domain.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
   "$defs": {
     "addition": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "id": {
-          "$ref": "#/$defs/id"
+          "$ref": "/schemas/common/gene_id.json"
         },
         "location": {
           "$ref": "#/$defs/geneLocation"
@@ -24,10 +57,10 @@
       "additionalProperties": false,
       "properties": {
         "id": {
-          "$ref": "#/$defs/id"
+          "$ref": "/schemas/common/gene_id.json"
         },
         "name": {
-          "$ref": "#/$defs/id"
+          "$ref": "/schemas/common/gene_id.json"
         },
         "product": {
           "type": "string"
@@ -53,10 +86,6 @@
           "type": "string"
         }
       }
-    },
-    "id": {
-      "type": "string",
-      "pattern": "^[^, ]*$"
     },
     "geneLocation": {
       "type": "object",

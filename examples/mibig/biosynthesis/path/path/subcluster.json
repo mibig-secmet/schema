@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "name": "beta-hydroxy-tyrosine"
+    }
+  ],
+  "steps": [
+    {
+      "type": "enzyme",
+      "gene": "bpsD"
+    }
+  ],
+  "references": ["pubmed:12345"],
+  "isSubcluster": true,
+  "producesPrecursor": true
+}

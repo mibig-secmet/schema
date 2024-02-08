@@ -1,7 +1,12 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/pks",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/modules/cal.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "properties": {}
+  "properties": {
+    "type": {
+      "const": "cal"
+    }
+  },
+  "required": ["type"]
 }

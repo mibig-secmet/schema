@@ -1,7 +1,35 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/pks",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/path/step.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "properties": {}
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["enzyme", "module"]
+    },
+    "name": {
+      "type": "string"
+    },
+    "gene": {
+      "$ref": "/schemas/common/gene_id.json"
+    },
+    "comment": {
+      "type": "string"
+    }
+  },
+  "required": ["type"],
+  "if": {
+    "properties": {
+      "type": {
+        "const": "enzyme"
+      }
+    }
+  },
+  "then": {
+    "required": ["gene"]
+  },
+  "else": {
+    "required": ["name"]
+  }
 }

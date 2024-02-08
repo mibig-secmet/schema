@@ -1,0 +1,17 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/path/product.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "structure": {
+      "$ref": "/schemas/common/smiles.json"
+    },
+    "comment": {
+      "type": "string"
+    }
+  }
+}

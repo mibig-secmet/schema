@@ -3,5 +3,20 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "properties": {}
+  "properties": {
+    "class": {
+      "const": "pks"
+    },
+    "subclass": {
+      "type": "string",
+      "enum": [
+        "Type I modular",
+        "Type I iterative",
+        "Type II aromatic",
+        "Type II highly reducing",
+        "Type III"
+      ]
+    }
+  },
+  "required": ["class", "subclass"]
 }

@@ -24,6 +24,9 @@
       "minItems": 1,
       "uniqueItems": true
     },
+    "genes": {
+      "$ref": "/schemas/mibig/genes.json"
+    },
     "retirementReasons": {
       "type": "array",
       "items": {
@@ -46,6 +49,7 @@
       "items": {
         "$ref": "/schemas/mibig/compound.json"
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "taxonomy": {
@@ -69,5 +73,15 @@
       "type": "string",
       "enum": ["pending", "embargoed", "active", "retired"]
     }
-  }
+  },
+  "required": [
+    "accession",
+    "changelog",
+    "status",
+    "completeness",
+    "loci",
+    "biosynthesis",
+    "compounds",
+    "taxonomy"
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/biosynthesis",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/biosynthesis.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
@@ -8,12 +8,12 @@
       "type": "array",
       "items": {
         "oneOf": [
-          { "$ref": "/schemas/mibig/biosynthesis/nrps" },
-          { "$ref": "/schemas/mibig/biosynthesis/other" },
-          { "$ref": "/schemas/mibig/biosynthesis/pks" },
-          { "$ref": "/schemas/mibig/biosynthesis/ribosomal" },
-          { "$ref": "/schemas/mibig/biosynthesis/saccharide" },
-          { "$ref": "/schemas/mibig/biosynthesis/terpene" }
+          { "$ref": "/schemas/mibig/biosynthesis/nrps.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/other.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/pks.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/ribosomal.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/saccharide.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/terpene.json" }
         ]
       },
       "minItems": 1,
@@ -31,10 +31,17 @@
           { "$ref": "/schemas/mibig/biosynthesis/modules/pks_modular" },
           { "$ref": "/schemas/mibig/biosynthesis/modules/pks_trans_at" }
         ]
-      }
+      },
+      "minItems": 1
     },
     "paths": {
-      "type": "array"
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/mibig/biosynthesis/path/path.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
     }
-  }
+  },
+  "required": ["classes", "paths"]
 }

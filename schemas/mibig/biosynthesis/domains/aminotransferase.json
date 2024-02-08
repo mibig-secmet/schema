@@ -1,0 +1,21 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/domains/aminotransferase.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "const": "aminotransferase"
+    },
+    "gene": {
+      "$ref": "/schemas/common/gene_id.json"
+    },
+    "location": {
+      "$ref": "/schemas/common/location.json"
+    },
+    "inactive": {
+      "type": "boolean"
+    }
+  },
+  "required": ["type", "gene", "location"]
+}

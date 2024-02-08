@@ -6,12 +6,8 @@
     "accession": {
       "type": "string"
     },
-    "start": {
-      "type": "number",
-      "min": 0
-    },
-    "end": {
-      "type": "number"
+    "location": {
+      "$ref": "/schemas/common/location.json"
     },
     "evidence": {
       "type": "array",
@@ -37,6 +33,7 @@
       "uniqueItems": true
     }
   },
+  "required": ["accession", "location", "evidence"],
   "$defs": {
     "evidenceCode": {
       "type": "string",

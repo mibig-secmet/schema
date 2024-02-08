@@ -1,22 +1,25 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/modules/nrps_type1",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/nrps_type1.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
   "properties": {
+    "type": {
+      "const": "nrps-type1"
+    },
     "active": {
       "type": "boolean"
     },
     "c_domain": {
-      "$ref": "/schemas/mibig/biosynthesis/modules/domains/condensation"
+      "$ref": "/schemas/mibig/biosynthesis/domains/condensation.json"
     },
     "a_domain": {
-      "$ref": "/schemas/mibig/biosynthesis/modules/domains/adenylation"
+      "$ref": "/schemas/mibig/biosynthesis/domains/adenylation.json"
     },
     "carriers": {
       "type": "array",
       "items": {
-        "$ref": "/schemas/mibig/biosynthesis/modules/domains/carrier"
+        "$ref": "/schemas/mibig/biosynthesis/domains/carrier.json"
       }
     },
     "comments": {
@@ -25,13 +28,13 @@
     "genes": {
       "type": "array",
       "items": {
-        "$ref": "/schemas/common/gene_id"
+        "$ref": "/schemas/common/gene_id.json"
       }
     },
     "integrated_monomers": {
       "type": "array",
       "items": {
-        "$ref": "#/$defs/monomer"
+        "$ref": "/schemas/mibig/biosynthesis/common/monomer.json"
       },
       "uniqueItems": true
     },
@@ -40,28 +43,37 @@
       "items": {
         "oneOf": [
           {
-            "$ref": "/schemas/mibig/biosynthesis/modules/domains/aminotransferase"
-          },
-          { "$ref": "/schemas/mibig/biosynthesis/modules/domains/cyclase" },
-          { "$ref": "/schemas/mibig/biosynthesis/modules/domains/dehydratase" },
-          {
-            "$ref": "/schemas/mibig/biosynthesis/modules/domains/enoylreductase"
-          },
-          { "$ref": "/schemas/mibig/biosynthesis/modules/domains/epimerase" },
-          { "$ref": "/schemas/mibig/biosynthesis/modules/domains/hydroxylase" },
-          {
-            "$ref": "/schemas/mibig/biosynthesis/modules/domains/ketoreductase"
+            "$ref": "/schemas/mibig/biosynthesis/domains/aminotransferase.json"
           },
           {
-            "$ref": "/schemas/mibig/biosynthesis/modules/domains/methyltransferase"
+            "$ref": "/schemas/mibig/biosynthesis/domains/cyclase.json"
           },
-          { "$ref": "/schemas/mibig/biosynthesis/modules/domains/other" },
-          { "$ref": "/schemas/mibig/biosynthesis/modules/domains/oxidase" }
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/dehydratase.json"
+          },
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/enoylreductase,josn"
+          },
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/epimerase.json"
+          },
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/hydroxylase.json"
+          },
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/ketoreductase.json"
+          },
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/methyltransferase.json"
+          },
+          { "$ref": "/schemas/mibig/biosynthesis/domains/other.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/domains/oxidase.json" }
         ]
       }
     },
     "name": {
       "type": "string"
     }
-  }
+  },
+  "required": ["type", "name", "genes", "active"]
 }

@@ -1,5 +1,5 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/path/path",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/path/path.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
@@ -7,7 +7,7 @@
     "products": {
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "/schemas/mibig/biosynthesis/path/product.json"
       },
       "minItems": 1,
       "uniqueItems": true
@@ -15,7 +15,7 @@
     "steps": {
       "type": "array",
       "items": {
-        "$ref": "/schemas/mibig/biosynthesis/path/step"
+        "$ref": "/schemas/mibig/biosynthesis/path/step.json"
       },
       "minItems": 1,
       "uniqueItems": true
@@ -27,7 +27,19 @@
       },
       "minItems": 1,
       "uniqueItems": true
+    },
+    "isSubcluster": {
+      "type": "boolean"
+    },
+    "producesPrecursor": {
+      "type": "boolean"
     }
   },
-  "required": ["products", "steps", "references"]
+  "required": [
+    "products",
+    "steps",
+    "references",
+    "isSubcluster",
+    "producesPrecursor"
+  ]
 }

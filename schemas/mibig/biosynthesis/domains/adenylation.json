@@ -1,0 +1,63 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/domains/adenylation.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "const": "adenylation"
+    },
+    "gene": {
+      "$ref": "/schemas/common/gene_id.json"
+    },
+    "location": {
+      "$ref": "/schemas/common/location.json"
+    },
+    "inactive": {
+      "type": "boolean"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/mibig/common/substrate_evidence.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "precursor_biosynthesis": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/common/gene_id.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "substrates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/substrate"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": ["type", "gene", "location"],
+  "$defs": {
+    "substrate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "proteinogenic": {
+          "type": "boolean"
+        },
+        "structure": {
+          "$ref": "/schemas/common/smiles.json"
+        }
+      },
+      "required": ["name", "proteinogenic", "structure"]
+    }
+  }
+}
