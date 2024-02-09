@@ -41,6 +41,7 @@
     ]
   },
   "status": "active",
+  "quality": "high",
   "completeness": "complete",
   "loci": [
     {
@@ -57,7 +58,226 @@
       ]
     }
   ],
-  "genes": {},
+  "genes": {
+    "annotations": [
+      {
+        "functions": [
+          {
+            "function": {
+              "name": "Precursor"
+            },
+            "evidence": [
+              {
+                "name": "Knock-out",
+                "references": ["pubmed:21183019"]
+              },
+              {
+                "name": "Activity assay",
+                "references": ["pubmed:21183019"]
+              }
+            ]
+          }
+        ],
+        "id": "nisA"
+      },
+      {
+        "functions": [
+          {
+            "function": {
+              "name": "Maturation"
+            },
+            "evidence": [
+              {
+                "name": "Knock-out",
+                "references": ["pubmed:21183019"]
+              },
+              {
+                "name": "Activity assay",
+                "references": ["pubmed:21183019"]
+              }
+            ]
+          }
+        ],
+        "id": "nisB"
+      },
+      {
+        "functions": [
+          {
+            "function": {
+              "name": "Transport"
+            },
+            "evidence": [
+              {
+                "name": "Knock-out",
+                "references": ["pubmed:21183019"]
+              },
+              {
+                "name": "Activity assay",
+                "references": ["pubmed:21183019"]
+              }
+            ]
+          }
+        ],
+        "id": "nisT"
+      },
+      {
+        "functions": [
+          {
+            "function": {
+              "name": "Maturation"
+            },
+            "evidence": [
+              {
+                "name": "Knock-out",
+                "references": ["pubmed:21183019"]
+              },
+              {
+                "name": "Activity assay",
+                "references": ["pubmed:21183019"]
+              }
+            ]
+          }
+        ],
+        "id": "nisC"
+      },
+      {
+        "functions": [
+          {
+            "function": {
+              "name": "Resistance/immunity"
+            },
+            "evidence": [
+              {
+                "name": "Knock-out",
+                "references": ["pubmed:21183019"]
+              },
+              {
+                "name": "Activity assay",
+                "references": ["pubmed:21183019"]
+              }
+            ]
+          }
+        ],
+        "id": "nisI"
+      },
+      {
+        "functions": [
+          {
+            "function": {
+              "name": "Scaffold biosynthesis"
+            },
+            "evidence": [
+              {
+                "name": "Activity assay",
+                "references": ["doi:10.1021/acs.biochem.7b00524"]
+              }
+            ]
+          }
+        ],
+        "id": "nisP"
+      },
+      {
+        "functions": [
+          {
+            "function": {
+              "name": "Regulation"
+            },
+            "evidence": [
+              {
+                "name": "Knock-out",
+                "references": ["pubmed:21183019"]
+              },
+              {
+                "name": "Activity assay",
+                "references": ["pubmed:21183019"]
+              }
+            ]
+          }
+        ],
+        "id": "nisR"
+      },
+      {
+        "functions": [
+          {
+            "function": {
+              "name": "Regulation"
+            },
+            "evidence": [
+              {
+                "name": "Knock-out",
+                "references": ["pubmed:21183019"]
+              },
+              {
+                "name": "Activity assay",
+                "references": ["pubmed:21183019"]
+              }
+            ]
+          }
+        ],
+        "id": "nisK"
+      },
+      {
+        "functions": [
+          {
+            "function": {
+              "name": "Resistance/immunity"
+            },
+            "evidence": [
+              {
+                "name": "Knock-out",
+                "references": ["pubmed:21183019"]
+              },
+              {
+                "name": "Activity assay",
+                "references": ["pubmed:21183019"]
+              }
+            ]
+          }
+        ],
+        "id": "nisF"
+      },
+      {
+        "functions": [
+          {
+            "function": {
+              "name": "Resistance/immunity"
+            },
+            "evidence": [
+              {
+                "name": "Knock-out",
+                "references": ["pubmed:21183019"]
+              },
+              {
+                "name": "Activity assay",
+                "references": ["pubmed:21183019"]
+              }
+            ]
+          }
+        ],
+        "id": "nisE"
+      },
+      {
+        "functions": [
+          {
+            "function": {
+              "name": "Resistance/immunity"
+            },
+            "evidence": [
+              {
+                "name": "Knock-out",
+                "references": ["pubmed:21183019"]
+              },
+              {
+                "name": "Activity assay",
+                "references": ["pubmed:21183019"]
+              }
+            ]
+          }
+        ],
+        "id": "nisG"
+      }
+    ]
+  },
   "biosynthesis": {
     "classes": [
       {
@@ -106,7 +326,22 @@
         }
       }
     ],
-    "paths": []
+    "paths": [
+      {
+        "products": [
+          {
+            "name": "nisin A"
+          }
+        ],
+        "steps": [
+          { "type": "enzyme", "gene": "nisB" },
+          { "type": "enzyme", "gene": "nisC" }
+        ],
+        "references": ["pubmed:21183019"],
+        "isSubcluster": false,
+        "producesPrecursor": false
+      }
+    ]
   },
   "compounds": [
     {

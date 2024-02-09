@@ -65,6 +65,12 @@
         "product": {
           "type": "string"
         },
+        "functions": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/mibig/gene/function.json"
+          }
+        },
         "tailoring": {
           "type": "array",
           "items": {
@@ -118,6 +124,7 @@
             "Amination",
             "Biaryl bond formation",
             "Carboxylation",
+            "Cyclization",
             "Deamination",
             "Decarboxylation",
             "Dehydration",
@@ -148,7 +155,7 @@
         "references": {
           "type": "array",
           "items": {
-            "$ref": "/schemas/common/$defs/citation"
+            "$ref": "/schemas/common/citation.json"
           },
           "minItems": 1,
           "uniqueItems": true
@@ -157,7 +164,8 @@
           "type": "string",
           "pattern": "^MITE(\\d)+$"
         }
-      }
+      },
+      "required": ["function", "references"]
     }
   }
 }

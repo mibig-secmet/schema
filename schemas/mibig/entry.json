@@ -10,6 +10,9 @@
     "changelog": {
       "$ref": "/schemas/common/changelog.json"
     },
+    "quality": {
+      "$ref": "#/$defs/quality"
+    },
     "status": {
       "$ref": "#/$defs/status"
     },
@@ -54,6 +57,9 @@
     },
     "taxonomy": {
       "$ref": "/schemas/mibig/taxonomy.json"
+    },
+    "comment": {
+      "type": "string"
     }
   },
   "$defs": {
@@ -67,7 +73,7 @@
     },
     "quality": {
       "type": "string",
-      "enum": ["low", "medium", "high"]
+      "enum": ["questionable", "low", "medium", "high"]
     },
     "status": {
       "type": "string",
@@ -77,6 +83,7 @@
   "required": [
     "accession",
     "changelog",
+    "quality",
     "status",
     "completeness",
     "loci",

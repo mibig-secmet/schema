@@ -10,13 +10,43 @@
     "subclass": {
       "type": "string",
       "enum": [
-        "Type I modular",
-        "Type I iterative",
+        "Type I",
         "Type II aromatic",
         "Type II highly reducing",
+        "Type II arylpolyene",
         "Type III"
       ]
+    },
+    "cyclases": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/common/gene_id.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "starter_unit": {
+      "$ref": "#/$defs/starter_unit"
+    },
+    "ketide_length": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "iterative": {
+      "$ref": "#/$defs/iterative"
     }
   },
-  "required": ["class", "subclass"]
+  "required": ["class", "subclass"],
+  "$defs": {
+    "starter_unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {}
+    },
+    "iterative": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {}
+    }
+  }
 }

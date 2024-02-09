@@ -28,6 +28,7 @@
           "type": "string",
           "enum": [
             "Activation / processing",
+            "Maturation",
             "Precursor",
             "Precursor biosynthesis",
             "Regulation",
@@ -58,10 +59,15 @@
           ]
         },
         "references": {
-          "$ref": "/schemas/common/citation.json"
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/citation.json"
+          },
+          "minItems": 1,
+          "uniqueItems": true
         }
       },
-      "required": ["name", "citations"]
+      "required": ["name", "references"]
     },
     "mutation_phenotype": {
       "type": "object",
