@@ -36,6 +36,7 @@
       "items": {
         "$ref": "/schemas/mibig/biosynthesis/common/monomer.json"
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "modification_domains": {
@@ -52,7 +53,7 @@
             "$ref": "/schemas/mibig/biosynthesis/domains/dehydratase.json"
           },
           {
-            "$ref": "/schemas/mibig/biosynthesis/domains/enoylreductase,josn"
+            "$ref": "/schemas/mibig/biosynthesis/domains/enoylreductase.json"
           },
           {
             "$ref": "/schemas/mibig/biosynthesis/domains/epimerase.json"

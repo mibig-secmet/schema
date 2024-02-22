@@ -23,16 +23,28 @@
       "type": "array",
       "items": {
         "oneOf": [
-          { "$ref": "/schemas/mibig/biosynthesis/modules/cal" },
-          { "$ref": "/schemas/mibig/biosynthesis/modules/nrps_type1" },
-          { "$ref": "/schemas/mibig/biosynthesis/modules/nrps_type6" },
-          { "$ref": "/schemas/mibig/biosynthesis/modules/other" },
-          { "$ref": "/schemas/mibig/biosynthesis/modules/pks_iterative" },
-          { "$ref": "/schemas/mibig/biosynthesis/modules/pks_modular" },
-          { "$ref": "/schemas/mibig/biosynthesis/modules/pks_trans_at" }
+          { "$ref": "/schemas/mibig/biosynthesis/modules/cal.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/modules/nrps_type1.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/modules/nrps_type6.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/modules/other.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/modules/pks_iterative.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/modules/pks_modular.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/modules/pks_trans_at.json" }
         ]
       },
       "minItems": 1
+    },
+    "operons": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "/schemas/common/gene_id.json"
+        },
+        "minItems": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
     },
     "paths": {
       "type": "array",

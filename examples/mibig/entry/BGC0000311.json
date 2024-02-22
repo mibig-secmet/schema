@@ -1,1 +1,234 @@
-{}
+{
+  "accession": "BGC0000311",
+  "changelog": {
+    "releases": [
+      {
+        "version": "1.0",
+        "date": "2015-06-12",
+        "entries": [
+          {
+            "contributors": ["AAAAAAAAAAAAAAAAAAAAAAAA"],
+            "reviewers": ["AAAAAAAAAAAAAAAAAAAAAAAA"],
+            "date": "2015-06-12",
+            "comment": "Submitted"
+          }
+        ]
+      },
+      {
+        "version": "2.0",
+        "date": "2019-10-16",
+        "entries": [
+          {
+            "contributors": ["AAAAAAAAAAAAAAAAAAAAAAAA"],
+            "reviewers": ["AAAAAAAAAAAAAAAAAAAAAAAA"],
+            "date": "2019-10-16",
+            "comment": "Migrated from v1.4"
+          }
+        ]
+      },
+      {
+        "version": "3.1",
+        "date": "2022-10-07",
+        "entries": [
+          {
+            "contributors": ["AAAAAAAAAAAAAAAAAAAAAAAA"],
+            "reviewers": ["AAAAAAAAAAAAAAAAAAAAAAAA"],
+            "date": "2022-10-07",
+            "comment": "Update chemical activity to schema version 2.11"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "active",
+  "quality": "questionable",
+  "completeness": "complete",
+  "loci": [
+    {
+      "accession": "Y16952.3",
+      "location": {
+        "from": 1,
+        "to": 66669
+      },
+      "evidence": [
+        {
+          "evidenceCode": "Knock-out studies",
+          "references": ["pubmed:10390204"]
+        }
+      ]
+    }
+  ],
+  "biosynthesis": {
+    "classes": [
+      {
+        "class": "NRPS",
+        "subclass": "Type I",
+        "thioesterases": [
+          {
+            "type": "thioesterase",
+            "gene": "bpsC",
+            "location": {
+              "from": 1621,
+              "to": 1836
+            }
+          }
+        ]
+      }
+    ],
+    "modules": [
+      {
+        "type": "nrps-type1",
+        "name": "1",
+        "genes": ["bpsA"],
+        "active": true,
+        "a_domain": {
+          "type": "adenylation",
+          "gene": "bpsA",
+          "location": { "from": 14, "to": 404 },
+          "substrates": [
+            {
+              "name": "Leucine",
+              "proteinogenic": true,
+              "structure": "NC(CC(C)C)C(=O)O"
+            }
+          ]
+        },
+        "carriers": [
+          {
+            "type": "carrier",
+            "gene": "bpsA",
+            "location": { "from": 504, "to": 569 }
+          }
+        ],
+        "integrated_monomers": [
+          {
+            "name": "N-methyl-(R)-leucine",
+            "structure": "N(C)C(CC(C)C)C(=O)O",
+            "references": ["pubmed:11932455"]
+          }
+        ]
+      },
+      {
+        "type": "nrps-type1",
+        "name": "2",
+        "genes": ["bpsA"],
+        "active": true,
+        "c_domain": {
+          "type": "condensation",
+          "gene": "bpsA",
+          "location": {
+            "from": 600,
+            "to": 893
+          }
+        },
+        "a_domain": {
+          "type": "adenylation",
+          "gene": "bpsA",
+          "location": { "from": 1039, "to": 1425 },
+          "substrates": [
+            {
+              "name": "beta-hydroxy-tyrosine",
+              "proteinogenic": false,
+              "structure": "NC(C(O)c1ccc(O)cc1)C(=O)O"
+            }
+          ]
+        },
+        "carriers": [
+          {
+            "type": "carrier",
+            "gene": "bpsA",
+            "location": { "from": 1524, "to": 1592 }
+          }
+        ],
+        "modification_domains": [
+          {
+            "type": "epimerase",
+            "gene": "bpsA",
+            "location": {
+              "from": 1605,
+              "to": 1906
+            }
+          }
+        ]
+      },
+      {
+        "type": "nrps-type1",
+        "name": "3",
+        "genes": ["bpsA"],
+        "active": true,
+        "c_domain": {
+          "type": "condensation",
+          "gene": "bpsA",
+          "location": {
+            "from": 2086,
+            "to": 2381
+          }
+        },
+        "a_domain": {
+          "type": "adenylation",
+          "gene": "bpsA",
+          "location": { "from": 2542, "to": 2946 },
+          "substrates": [
+            {
+              "name": "asparagine",
+              "proteinogenic": true,
+              "structure": "NC(CC(=O)N)C(=O)O"
+            }
+          ]
+        },
+        "carriers": [
+          {
+            "type": "carrier",
+            "gene": "bpsA",
+            "location": { "from": 3052, "to": 3119 }
+          }
+        ]
+      }
+    ],
+    "paths": [
+      {
+        "products": [{ "name": "balhimycin" }],
+        "steps": [
+          { "type": "module", "name": "1" },
+          { "type": "module", "name": "2" },
+          { "type": "module", "name": "3" },
+          { "type": "module", "name": "4" },
+          { "type": "module", "name": "5" },
+          { "type": "module", "name": "6" },
+          { "type": "module", "name": "7" },
+          { "type": "enzyme", "gene": "bhaA" },
+          { "type": "enzyme", "gene": "oxyA" },
+          { "type": "enzyme", "gene": "oxyB" },
+          { "type": "enzyme", "gene": "oxyC" },
+          { "type": "enzyme", "gene": "bgtfA" },
+          { "type": "enzyme", "gene": "bgtfB" },
+          { "type": "enzyme", "gene": "bgtfC" }
+        ],
+        "references": ["pubmed:10390204"],
+        "isSubcluster": false,
+        "producesPrecursor": false
+      }
+    ]
+  },
+  "compounds": [
+    {
+      "name": "balhimycin",
+      "evidence": [
+        {
+          "method": "Mass spectrometry",
+          "references": ["pubmed:10390204"]
+        }
+      ],
+      "cyclic": true,
+      "structure": "CNC(CC(C)C)C(=O)NC1C(O)C2=CC=C(OC3=C(OC4O[C@H](CO)C(O)[C@H](O)C4O)C4=CC(=C3)C(NC(=O)C(CC(N)=O)NC1=O)C(=O)NC1C3=CC(=C(O)C=C3)C3=C(O)C=C(O)C=C3C(NC(=O)C(NC1=O)C(OC1C[C@](C)(N)C(=O)C(C)O1)C1=CC=C(O4)C(Cl)=C1)C(O)=O)C(Cl)=C2",
+      "formula": "C66H73Cl2N9O24",
+      "databaseIds": ["npatlas:NPA010597", "pubchem:16131414"],
+      "bioactivities": ["antibacterial"],
+      "mass": 1445.4145
+    }
+  ],
+  "taxonomy": {
+    "ncbiTaxId": 1081091,
+    "name": "Amycolatopsis balhimycina DSM 5908"
+  }
+}

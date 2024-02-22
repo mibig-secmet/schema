@@ -341,6 +341,12 @@
         "isSubcluster": false,
         "producesPrecursor": false
       }
+    ],
+    "operons": [
+      ["nisA"],
+      ["nisF", "nisE", "nisG"],
+      ["nisR", "nisK"],
+      ["nisB", "nisT", "nisC", "nisI", "nisP"]
     ]
   },
   "compounds": [

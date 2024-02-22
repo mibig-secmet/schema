@@ -1,0 +1,23 @@
+{
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/common/monomer.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "structure": {
+      "$ref": "/schemas/common/smiles.json"
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/common/citation.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": ["name", "structure", "references"]
+}

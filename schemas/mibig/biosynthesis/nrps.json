@@ -21,7 +21,7 @@
     "thioesterases": {
       "type": "array",
       "items": {
-        "$ref": "/schemas/mibig/biosynthesis/common/thioesterase.json"
+        "$ref": "/schemas/mibig/biosynthesis/domains/thioesterase.json"
       },
       "uniqueItems": true
     }
