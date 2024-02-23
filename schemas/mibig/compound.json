@@ -127,7 +127,7 @@
       "properties": {
         "ion": {
           "type": "string",
-          "enum": ["[M+H]+", "[M-H]-", "[M+Na]+", "other"]
+          "enum": ["[M+H]+", "[M-H]-", "[M+Na]+", "[2M+Na]+", "[2M+H]+", "[M+2H]2+", "[M+3H]3+", "[M+56Fe-2H]+", "[M+NH4]+", "[M+K]+", "[M+H2O+H]+", "other"]
         },
         "details": {
           "type": "string"

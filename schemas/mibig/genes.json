@@ -162,7 +162,7 @@
         },
         "dbReference": {
           "type": "string",
-          "pattern": "^MITE(\\d)+$"
+          "pattern": "^mite:MITE\\d{7,7}$"
         }
       },
       "required": ["function", "references"]

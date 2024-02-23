@@ -49,16 +49,30 @@
     - ...
     - Atropopeptide
     - Biarylitide
+    - Borosin
+    - Crocagin
     - Cyanobactin
+    - Cyptide
     - Dikaritin
+    - Epipeptide
     - Glycocin
+    - Guanidinotide
     - Head-to-tail cyclized peptide
     - Lasso peptide
     - Linaridin
+    - Methanobactin
     - Microcin
     - Microviridin
+    - Mycofactocin
+    - Pearlin
     - Proteusin
+    - Ranthipeptide
+    - Rotapeptide
+    - Ryptide
     - Sactipeptide
+    - Spliceotide
+    - Streptide
+    - Sulfatyrotide
     - Other
 
 - **Saccharide**
