@@ -1,0 +1,28 @@
+{
+  "name": "McjC",
+  "description": "Lassopeptide ATP-dependent lactam synthetase (C-protein, asparagine synthetase-like)",
+  "databaseIds": [
+    "uniprot:Q9X2V9",
+    "genbank:AAD28496.1"
+  ],
+  "evidence": [
+    {
+      "method": [
+        "Knock-out studies"
+      ],
+      "references": [
+        "doi:10.1128/jb.181.8.2659-2662.1999"
+      ]
+    }
+  ],
+  "auxiliary_enzymes": [
+    {
+      "name": "McjB",
+      "description": "Lasso peptide cysteine protease. Required for macrolactam-synthethase function (folds and cleaves precursor peptide)",
+      "databaseIds": [
+        "uniprot:Q9X2V8",
+        "genpept:AAD28495.1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "Protein name, e.g. 'NisB'.",
+      "type": "string"
+    },
+    "description": {
+      "title": "Brief description of the enzyme function.",
+      "type": "string"
+    },
+    "databaseIds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/databaseId"
+      },
+      "uniqueItems": true
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evidenceCode": {
+            "$ref": "#/$defs/evidenceCode"
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "$ref": "/schemas/common/citation.json"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": ["evidenceCode", "references"]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "auxiliary_enzymes": {
+      "title": "Specify any required auxiliary enzymes that are co-forming the maturation machinery.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+          "title": "Protein name, e.g. 'NisC'.",
+          "type": "string"
+          },
+          "description": {
+            "title": "Brief description of function.",
+            "type": "string"
+          },
+          "databaseIds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/databaseId"
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  },
+  "required": ["name", "databaseIds", "evidence"],
+  "$defs": {
+    "evidenceCode": {
+      "type": "string",
+      "enum": [
+        "Knock-out studies",
+        "Enzymatic assays",
+        "Heterologous expression",
+        "In vitro expression"
+      ]
+    },
+    "databaseId": {
+      "type": "string",
+      "oneOf": [
+        {
+          "title": "Uniprot ID reference.",
+          "pattern": "^uniprot:[A-Z0-9]+$"
+        },
+        {
+          "title": "GenBank GenPept ID (= protein ID, GenBank gene products)",
+          "pattern": "^genpept:[A-Z]{3}[0-9]{5,7}\\.[0-9]+$"
+        }
+      ]
+    }
+  }
+}

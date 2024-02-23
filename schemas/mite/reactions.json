@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "tailoring": {
+      "title": "Ontology-derived tailoring/maturation reaction term.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tailoringFunction"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "description": {
+      "title": "Additional information about tailoring/maturation reaction.",
+      "type": "string"
+    },
+    "reactionSMARTS": {
+      "title": "A reaction SMARTS reaction pattern describing the (sub)structure to match and the reaction to perform. SMARTS pattern must be indexed and RDKit-compatible.",
+      "type": "string",
+      "pattern": "^.+>>.+$"
+    },
+    "validated_reactions": {
+      "type": "array",
+      "title": "One or more substrate (sub)structure -> product (sub)structure pairs that result from application of reactionSMARTS described before, including metadata.",
+      "items": {
+        "substrate_(sub)structure": {
+          "$ref": "/schemas/common/smiles.json"
+        },
+        "product_(sub)structure": {
+          "$ref": "/schemas/common/smiles.json"
+        },
+        "reactionMetadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "balanced": {
+              "title": "Is the validated reaction balanced (i.e. stoichiometric complete)?",
+              "type": "boolean"
+            },
+            "isAuthentic": {
+              "title": "Is this reaction-product pair authentic/experimentally verified (i.e. not substructures)",
+              "type": "boolean"
+            },
+            "intermediate": {
+              "title": "Is this validated reaction an intermediate step (i.e. not the final product)?",
+              "type": "boolean"
+            },
+            "iterative": {
+              "title": "Is the reaction applied iteratively (i.e. more than once)?",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "required": ["substrate_(sub)structure", "product_(sub)structure", "reactionMetadata"],
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "databaseIds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/databaseId"
+      },
+      "uniqueItems": true
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evidenceCode": {
+            "$ref": "#/$defs/evidenceCode"
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "$ref": "/schemas/common/citation.json"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": ["evidenceCode", "references"]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "experimentMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "system": {
+          "type": "string",
+          "enum": [
+            "in vivo",
+            "in vitro"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "time": {
+          "title": "Only when in vitro: Experiment reaction time in minutes.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "temperature": {
+          "title": "Only when in vitro: Experiment temperature in Kelvin.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "pH": {
+          "title": "Only when in vitro: Experiment pH.",
+          "type": "number",
+          "minimum": 1,
+          "maximum": 14
+        },
+        "pressure": {
+          "title": "Only when in vitro: pressure in milibar.",
+          "type": "number"
+        },
+        "Km": {
+          "type": "object",
+          "title": "Only when in vitro: Michaelis constant, as concentration.",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "mM",
+                "µM",
+                "nM"
+              ]
+            }
+          }
+        },
+        "kcat": {
+          "title": "Only when in vitro: catalytic constant/turnover number, per second",
+          "type": "number"
+        }
+      }
+    }
+  },
+  "required": ["tailoring", "reactionSMARTS", "examples_reaction", "evidence"],
+  "$defs": {
+    "tailoringFunction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "Acetylation",
+            "Acylation",
+            "Amination",
+            "Biaryl bond formation",
+            "Carboxylation",
+            "Cyclization",
+            "Deamination",
+            "Decarboxylation",
+            "Dehydration",
+            "Dehydrogenation",
+            "Demethylation",
+            "Dioxygenation",
+            "Epimerization",
+            "FADH2 supply for chlorination",
+            "Glycosylation",
+            "Halogenation",
+            "Heterocyclization",
+            "Hydrolysis",
+            "Hydroxylation",
+            "Macrolactam formation",
+            "Methylation",
+            "Monooxygenation",
+            "Oxidation",
+            "Phosphorylation",
+            "Prenylation",
+            "Reduction",
+            "Sulfation",
+            "Other"
+          ]
+        },
+        "details": {
+          "type": "string"
+        }
+      },
+      "required": ["function"]
+    },
+    "databaseId": {
+      "title": "Cross-reference to other databases.",
+      "type": "string",
+      "oneOf": [
+        {
+          "pattern": "^rhea:(\\d+)$"
+        },
+        {
+          "pattern": "^MITE(\\d{7,7})$"
+        },
+        {
+          "pattern": "^EC [0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]$"
+        }
+      ]
+    },
+    "evidenceCode": {
+      "type": "string",
+      "enum": [
+        "Knock-out studies",
+        "Enzymatic assays",
+        "Heterologous expression",
+        "In vitro expression"
+      ]
+    }
+  }
+}

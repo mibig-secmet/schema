@@ -1,0 +1,43 @@
+{
+  "tailoring": [
+    "Macrolactam formation"
+  ],
+  "description": "Lassopeptide macrolactam formation after N-terminal cleavage: NH2-G-G-X-X-X-X-X-D/E-Xn-COOH.",
+  "reactionSMARTS": "([#7H2:22]-[#6H2:21]-[#6:19](=[O:20])-[#7:18]-[#6H2:17]-[#6:15](=[O:16])-[#7:14]-[#6:13]-[#6:11](=[O:12])-[#7:10]-[#6:9]-[#6:7](=[O:8])-[#7:6]-[#6:5]-[#6:3](=[O:4])-[#7:2]-[#6:1]-[#6:23](=[O:24])-[#7:25]-[#6:26]-[#6:27](=[O:28])-[#7:29]-[#6:30](-[#6:31]-[#6:32]-[#6:33](-[#8:35])=[O:34])-[#6:36]=[O:37])>>([O:37]=[#6:36]-[#6:30]-1-[#6:31]-[#6:32]-[#6:33](=[O:34])-[#7:22]-[#6:21]-[#6:19](=[O:20])-[#7:18]-[#6:17]-[#6:15](=[O:16])-[#7:14]-[#6:13]-[#6:11](=[O:12])-[#7:10]-[#6:9]-[#6:7](=[O:8])-[#7:6]-[#6:5]-[#6:3](=[O:4])-[#7:2]-[#6:1]-[#6:23](=[O:24])-[#7:25]-[#6:26]-[#6:27](=[O:28])-[#7:29]-1)",
+  "validated_reactions": [
+    {
+      "substrate_(sub)structure": "CC[C@H](C)[C@H](NC(=O)CNC(=O)[C@@H](NC(=O)[C@H](Cc1ccccc1)NC(=O)[C@H](Cc1ccc(O)cc1)NC(=O)[C@H](CCC(=O)O)NC(=O)[C@@H]1CCCN1C(=O)[C@@H](NC(=O)[C@H](Cc1c[nH]cn1)NC(=O)CNC(=O)[C@H](C)NC(=O)CNC(=O)CN)C(C)C)C(C)C)C(=O)NCC(=O)N[C@H](C(=O)N1CCC[C@H]1C(=O)N[C@H](C(=O)N[C@@H](CO)C(=O)N[C@@H](Cc1ccccc1)C(=O)N[C@@H](Cc1ccc(O)cc1)C(=O)NCC(=O)O)[C@@H](C)CC)[C@@H](C)O",
+      "product_(sub)structure": "CC[C@H](C)[C@H](NC(=O)CNC(=O)[C@@H](NC(=O)[C@H](Cc1ccccc1)NC(=O)[C@H](Cc1ccc(O)cc1)NC(=O)[C@@H]1CCC(=O)NCC(=O)NCC(=O)N[C@@H](C)C(=O)NCC(=O)N[C@@H](Cc2c[nH]cn2)C(=O)N[C@@H](C(C)C)C(=O)N2CCC[C@H]2C(=O)N1)C(C)C)C(=O)NCC(=O)N[C@H](C(=O)N1CCC[C@H]1C(=O)N[C@H](C(=O)N[C@@H](CO)C(=O)N[C@@H](Cc1ccccc1)C(=O)N[C@@H](Cc1ccc(O)cc1)C(=O)NCC(=O)O)[C@@H](C)CC)[C@@H](C)O.O",
+      "reactionMetadata": {
+        "balanced": true,
+        "isAuthentic": true,
+        "intermediate": false,
+        "iterative": false
+      }
+    },
+    {
+      "substrate_(sub)structure": "NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)N[C@@H](CCC(=O)O)C(=O)O",
+      "product_(sub)structure": "O=C1CC[C@@H](C(=O)O)NC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CN1",
+      "reactionMetadata": {
+        "balanced": false,
+        "isAuthentic": false,
+        "intermediate": false,
+        "iterative": false
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "method": [
+        "Heterologous expression"
+      ],
+      "references": [
+        "doi:10.1128/JB.181.8.2659-2662.1999"
+      ]
+    }
+  ],
+  "experimentMetadata": {
+    "system": "in vivo",
+    "description": "heterologous expression of mutated precursor peptide genes for determination of substrate specificity."
+  }
+}
