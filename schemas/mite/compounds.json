@@ -1,4 +1,5 @@
 {
+  "$id": "https://meta.secondarymetabolites.org/schemas/mite/compounds.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "type": "object",

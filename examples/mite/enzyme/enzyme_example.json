@@ -3,13 +3,11 @@
   "description": "Lassopeptide ATP-dependent lactam synthetase (C-protein, asparagine synthetase-like)",
   "databaseIds": [
     "uniprot:Q9X2V9",
-    "genbank:AAD28496.1"
+    "genpept:AAD28496.1"
   ],
   "evidence": [
     {
-      "method": [
-        "Knock-out studies"
-      ],
+      "evidenceCode": "Knock-out studies",
       "references": [
         "doi:10.1128/jb.181.8.2659-2662.1999"
       ]

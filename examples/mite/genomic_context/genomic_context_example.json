@@ -2,7 +2,7 @@
   "classes": [
     "Ribosomal"
   ],
-  "accession": {
+  "accession_genome": {
     "accessionID": "AF061787.1"
   },
   "taxonomy": {
@@ -10,13 +10,11 @@
     "ncbiTaxId": 562
   },
   "databaseIds": [
-    "BGC0000581"
+    "mibig:BGC0000581"
   ],
   "evidence": [
     {
-      "method": [
-        "Knock-out studies"
-      ],
+      "evidenceCode": "Knock-out studies",
       "references": [
         "doi:10.1074/jbc.M803995200"
       ]

@@ -1,4 +1,5 @@
 {
+  "$id": "https://meta.secondarymetabolites.org/schemas/mite/entry.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "title": "Minimum Information about a Tailoring Enzyme/Maturase Data Standard",

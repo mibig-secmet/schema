@@ -1,4 +1,5 @@
 {
+  "$id": "https://meta.secondarymetabolites.org/schemas/mite/genomic_context.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "type": "object",
@@ -84,7 +85,7 @@
       "type": "string",
       "oneOf": [
         {
-          "pattern": "^BGC:(\\d{7,7})$"
+          "pattern": "^mibig:BGC(\\d{7,7})$"
         }
       ]
     },
