@@ -32,6 +32,12 @@
         "references": [
           "doi:10.1128/jb.181.8.2659-2662.1999"
         ]
+      },
+      {
+        "evidenceCode": "In vitro expression",
+        "references": [
+          "doi:10.1002/cbic.201200016"
+        ]
       }
     ],
     "auxiliary_enzymes": [
@@ -98,7 +104,7 @@
       {
         "evidenceCode": "Knock-out studies",
         "references": [
-          "doi:10.1074/jbc.M803995200"
+          "doi:10.1128/jb.181.8.2659-2662.1999"
         ]
       }
     ]
@@ -138,7 +144,7 @@
         {
           "evidenceCode": "Heterologous expression",
           "references": [
-            "doi:10.1128/JB.181.8.2659-2662.1999"
+            "doi:10.1074/jbc.M803995200"
           ]
         }
       ],
@@ -169,7 +175,7 @@
         {
           "evidenceCode": "Heterologous expression",
           "references": [
-            "doi:10.1128/JB.181.8.2659-2662.1999"
+            "doi:10.1074/jbc.M803995200"
           ]
         }
       ],
