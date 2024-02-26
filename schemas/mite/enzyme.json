@@ -66,9 +66,9 @@
           "items": {
             "type": "string",
             "enum": [
-              "Experimental evidence at protein level",
+              "Protein inferred from homology",
               "Experimental evidence at transcript level",
-              "Protein inferred from homology"
+              "Experimental evidence at protein level"
             ]
           }
         },
