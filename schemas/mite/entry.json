@@ -71,6 +71,7 @@
     "changelog",
     "quality",
     "status",
+    "enzyme",
     "compounds",
     "genomic_context",
     "reactions"
