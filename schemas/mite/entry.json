@@ -27,7 +27,7 @@
     },
     "compounds": {
       "type": "array",
-      "title": "Mature compound(s) associated with enzyme (were acted on by enzyme).",
+      "title": "Mature compound(s) (end products) associated with enzyme (were acted on by enzyme).",
       "items": {
         "$ref": "/schemas/mite/compounds.json"
       },
@@ -39,7 +39,7 @@
       "$ref": "/schemas/mite/genomic_context.json"
     },
     "reactions": {
-      "title": "One or more reaction patterns of enzyme.",
+      "title": "One or more reactions associated with enzyme.",
       "type": "array",
       "items": {
         "$ref": "/schemas/mite/reactions.json"
