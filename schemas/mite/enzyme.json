@@ -19,40 +19,16 @@
       },
       "uniqueItems": true
     },
-    "evidence": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "evidenceCode": {
-            "$ref": "#/$defs/evidenceCode"
-          },
-          "references": {
-            "type": "array",
-            "items": {
-              "$ref": "/schemas/common/citation.json"
-            },
-            "minItems": 1,
-            "uniqueItems": true
-          }
-        },
-        "required": ["evidenceCode", "references"]
-      },
-      "minItems": 1,
-      "uniqueItems": true
-    },
     "auxiliary_enzymes": {
       "title": "Specify any required auxiliary enzymes that are co-forming the maturation machinery.",
       "type": "array",
-      "uniqueItems": true,
       "items": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
           "name": {
-          "title": "Protein name, e.g. 'NisC'.",
-          "type": "string"
+            "title": "Protein name, e.g. 'NisC'.",
+            "type": "string"
           },
           "description": {
             "title": "Brief description of function.",
@@ -67,18 +43,45 @@
           }
         }
       }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      },
+      "minItems": 1,
+      "uniqueItems": true
     }
   },
   "required": ["name", "databaseIds", "evidence"],
   "$defs": {
-    "evidenceCode": {
-      "type": "string",
-      "enum": [
-        "Knock-out studies",
-        "Enzymatic assays",
-        "Heterologous expression",
-        "In vitro expression"
-      ]
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "evidenceCode": {
+          "title": "Evidence for protein existence. Adapted from https://www.uniprot.org/help/protein_existence.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "Experimental evidence at protein level",
+              "Experimental evidence at transcript level",
+              "Protein inferred from homology"
+            ]
+          }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/citation.json"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": ["evidenceCode", "references"]
     },
     "databaseId": {
       "type": "string",
