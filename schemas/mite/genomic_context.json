@@ -46,22 +46,7 @@
     "evidence": {
       "type": "array",
       "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "evidenceCode": {
-            "$ref": "#/$defs/evidenceCode"
-          },
-          "references": {
-            "type": "array",
-            "items": {
-              "$ref": "/schemas/common/citation.json"
-            },
-            "minItems": 1,
-            "uniqueItems": true
-          }
-        },
-        "required": ["evidenceCode", "references"]
+        "$ref": "#/$defs/evidence"
       },
       "minItems": 1,
       "uniqueItems": true
@@ -69,17 +54,37 @@
   },
   "required": ["databaseIds", "evidence"],
   "$defs": {
-    "evidenceCode": {
-      "type": "string",
-      "enum": [
-        "Homology-based prediction",
-        "Correlation of genomic and metabolomic data",
-        "Gene expression correlated with compound production",
-        "Knock-out studies",
-        "Enzymatic assays",
-        "Heterologous expression",
-        "In vitro expression"
-      ]
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "evidenceCode": {
+          "title": "Evidence for BGC existence.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "Homology-based prediction",
+              "Correlation of genomic and metabolomic data",
+              "Gene expression correlated with compound production",
+              "Knock-out studies",
+              "Enzymatic assays",
+              "Heterologous expression",
+              "In vitro expression"
+            ]
+          }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/citation.json"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": ["evidenceCode", "references"]
     },
     "databaseId": {
       "type": "string",
