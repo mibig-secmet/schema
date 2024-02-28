@@ -39,17 +39,30 @@
           "title": "Flag to indicate if the reaction contains a position variation bond which indicates positional variation of a substituent over multiple atoms (e.g. variable chlorination on an aromatic ring).",
           "type": "boolean"
         },
-        "hasCustomProperties": {
-          "title": "Flag to indicate if custom atom properties were set (e.g. explicit hydrogen).",
-          "type": "boolean"
+        "explicitHydrogen": {
+          "title": "On substrate site of reaction, indicate atom with explicit hydrogen atoms (e.g. an amine with two hydrogens).",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "index": {
+                "title": "The atom index",
+                "type": "integer"
+              },
+              "nrHydrogens": {
+                "title": "The number of explicit hydrogen atoms on this atom",
+                "type": "integer"
+              }
+            }
+          }
         }
       },
       "required": [
         "reactionCXSMARTS",
         "isIterative",
         "hasLinker",
-        "hasPositionVariationBond",
-        "hasCustomProperties"
+        "hasPositionVariationBond"
       ]
     },
     "validated_reactions": {
@@ -57,42 +70,44 @@
       "title": "One or more substrate (sub)structure -> product (sub)structure pairs that result from application of reactionCXSMARTS.",
       "minItems": 1,
       "items": {
-        "reaction": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "substrate_(sub)structure": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "substrate_(sub)structure": {
+            "$ref": "/schemas/common/smiles.json"
+          },
+          "product_(sub)structure": {
+            "type": "array",
+            "title": "One or more product (sub)structures",
+            "minItems": 1,
+            "items": {
               "$ref": "/schemas/common/smiles.json"
-            },
-            "product_(sub)structure": {
-              "type": "array",
-              "title": "One or more product (sub)structures",
-              "minItems": 1,
-              "items": {
-                "$ref": "/schemas/common/smiles.json"
-              }
-            },
-            "isBalanced": {
-              "title": "Is the validated reaction balanced (i.e. stoichiometric complete)?",
-              "type": "boolean"
-            },
-            "isAuthentic": {
-              "title": "Is this substrate-product pair authentic/experimentally verified (i.e. not substructures)",
-              "type": "boolean"
-            },
-            "isIntermediate": {
-              "title": "Is this validated reaction an intermediate step (i.e. not the final product)?",
-              "type": "boolean"
             }
           },
-          "required": [
-            "substrate_(sub)structure",
-            "product_(sub)structure",
-            "isBalanced",
-            "isAuthentic",
-            "isIntermediate"
-          ]
-        }
+          "isBalanced": {
+            "title": "Is the validated reaction balanced (i.e. stoichiometric complete)?",
+            "type": "boolean"
+          },
+          "isAuthentic": {
+            "title": "Is this substrate-product pair authentic/experimentally verified (i.e. not substructures)",
+            "type": "boolean"
+          },
+          "isIntermediate": {
+            "title": "Is this validated reaction an intermediate step (i.e. not the final product)?",
+            "type": "boolean"
+          },
+          "description": {
+            "title": "Additional information about reaction example",
+            "type": "string"
+          }
+        },
+        "required": [
+          "substrate_(sub)structure",
+          "product_(sub)structure",
+          "isBalanced",
+          "isAuthentic",
+          "isIntermediate"
+        ]
       }
     },
     "databaseIds": {

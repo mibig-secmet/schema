@@ -44,8 +44,7 @@
       "items": {
         "$ref": "/schemas/mite/reactions.json"
       },
-      "minItems": 1,
-      "uniqueItems": true
+      "minItems": 1
     },
     "comment": {
       "title": "Any additional information about this entry",
