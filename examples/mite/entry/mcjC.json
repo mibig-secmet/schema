@@ -35,16 +35,9 @@
         ]
       }
     ],
-    "evidence": [
-      {
-        "evidenceCode": [
-          "Experimental evidence at protein level"
-        ],
-        "references": [
-          "doi:10.1128/jb.181.8.2659-2662.1999",
-          "doi:10.1002/cbic.201200016"
-        ]
-      }
+    "references": [
+      "doi:10.1128/jb.181.8.2659-2662.1999",
+      "doi:10.1002/cbic.201200016"
     ]
   },
   "compounds": [
@@ -123,6 +116,17 @@
             "index": 6,
             "nrHydrogens": 2
           }
+        ],
+        "evidence": [
+          {
+            "evidenceCode": [
+              "Heterologous expression",
+              "Site-directed mutagenesis"
+            ],
+            "references": [
+              "doi:10.1074/jbc.M803995200"
+            ]
+          }
         ]
       },
       "validated_reactions": [
@@ -134,18 +138,17 @@
           "isBalanced": true,
           "isAuthentic": true,
           "isIntermediate": false,
-          "description": "Lasso macrocyclisation of microcin J25 after precursor cleavage, leading to mature product."
-        }
-      ],
-      "evidence": [
-        {
-          "evidenceCode": [
-            "Heterologous expression",
-            "Site-directed mutagenesis",
-            "(Tandem) mass spectrometry"
-          ],
-          "references": [
-            "doi:10.1074/jbc.M803995200"
+          "description": "Lasso macrocyclisation of microcin J25 after precursor cleavage, leading to mature product.",
+          "evidence": [
+            {
+              "evidenceCode": [
+                "Heterologous expression",
+                "Site-directed mutagenesis"
+              ],
+              "references": [
+                "doi:10.1074/jbc.M803995200"
+              ]
+            }
           ]
         }
       ]

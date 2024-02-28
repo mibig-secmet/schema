@@ -15,15 +15,8 @@
       ]
     }
   ],
-  "evidence": [
-    {
-      "evidenceCode": [
-        "Experimental evidence at protein level"
-      ],
-      "references": [
-        "doi:10.1128/jb.181.8.2659-2662.1999",
-        "doi:10.1002/cbic.201200016"
-      ]
-    }
+  "references": [
+    "doi:10.1128/jb.181.8.2659-2662.1999",
+    "doi:10.1002/cbic.201200016"
   ]
 }
