@@ -15,8 +15,8 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "evidenceCode": {
-            "$ref": "#/$defs/evidenceCode"
+          "method": {
+            "$ref": "#/$defs/method"
           },
           "references": {
             "type": "array",
@@ -27,7 +27,7 @@
             "uniqueItems": true
           }
         },
-        "required": ["evidenceCode", "references"]
+        "required": ["method", "references"]
       },
       "minItems": 1,
       "uniqueItems": true
@@ -35,7 +35,7 @@
   },
   "required": ["accession", "location", "evidence"],
   "$defs": {
-    "evidenceCode": {
+    "nethod": {
       "type": "string",
       "enum": [
         "Homology-based prediction",
