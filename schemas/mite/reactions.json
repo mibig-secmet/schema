@@ -2,6 +2,7 @@
   "$id": "https://meta.secondarymetabolites.org/schemas/mite/reactions.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
+  "required": ["tailoring", "reactionCXSMARTS", "validated_reactions", "evidence"],
   "properties": {
     "tailoring": {
       "title": "Ontology-derived tailoring/maturation reaction term.",
@@ -16,47 +17,83 @@
       "title": "Additional information about tailoring/maturation reaction.",
       "type": "string"
     },
-    "reactionSMARTS": {
-      "title": "A reaction SMARTS reaction pattern describing the (sub)structure to match and the reaction to perform. SMARTS pattern must be indexed and RDKit-compatible.",
-      "type": "string",
-      "pattern": "^.+>>.+$"
+    "reactionCXSMARTS": {
+      "title": "A reaction CXSMARTS (Chemaxon SMARTS) pattern describing the (sub)structure to match and the reaction to perform.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "reactionCXSMARTS": {
+          "title": "The CXSMARTS string",
+          "type": "string",
+          "pattern": "^.+>>.+$"
+        },
+        "isIterative": {
+          "title": "Flag to indicate if the reaction is applied iteratively (modifying all possible substructures).",
+          "type": "boolean"
+        },
+        "hasLinker": {
+          "title": "Flag to indicate if the reaction contains a Link group to represent repeating units of variable length (e.g. a C-chain of variable length).",
+          "type": "boolean"
+        },
+        "hasPositionVariationBond": {
+          "title": "Flag to indicate if the reaction contains a position variation bond which indicates positional variation of a substituent over multiple atoms (e.g. variable chlorination on an aromatic ring).",
+          "type": "boolean"
+        },
+        "hasCustomProperties": {
+          "title": "Flag to indicate if custom atom properties were set (e.g. explicit hydrogen).",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "reactionCXSMARTS",
+        "isIterative",
+        "hasLinker",
+        "hasPositionVariationBond",
+        "hasCustomProperties"
+      ]
     },
     "validated_reactions": {
       "type": "array",
-      "title": "One or more substrate (sub)structure -> product (sub)structure pairs that result from application of reactionSMARTS described before, including metadata.",
+      "title": "One or more substrate (sub)structure -> product (sub)structure pairs that result from application of reactionCXSMARTS.",
+      "minItems": 1,
       "items": {
-        "substrate_(sub)structure": {
-          "$ref": "/schemas/common/smiles.json"
-        },
-        "product_(sub)structure": {
-          "$ref": "/schemas/common/smiles.json"
-        },
-        "reactionMetadata": {
+        "reaction": {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "balanced": {
+            "substrate_(sub)structure": {
+              "$ref": "/schemas/common/smiles.json"
+            },
+            "product_(sub)structure": {
+              "type": "array",
+              "title": "One or more product (sub)structures",
+              "minItems": 1,
+              "items": {
+                "$ref": "/schemas/common/smiles.json"
+              }
+            },
+            "isBalanced": {
               "title": "Is the validated reaction balanced (i.e. stoichiometric complete)?",
               "type": "boolean"
             },
             "isAuthentic": {
-              "title": "Is this reaction-product pair authentic/experimentally verified (i.e. not substructures)",
+              "title": "Is this substrate-product pair authentic/experimentally verified (i.e. not substructures)",
               "type": "boolean"
             },
-            "intermediate": {
+            "isIntermediate": {
               "title": "Is this validated reaction an intermediate step (i.e. not the final product)?",
               "type": "boolean"
-            },
-            "iterative": {
-              "title": "Is the reaction applied iteratively (i.e. more than once)?",
-              "type": "boolean"
             }
-          }
+          },
+          "required": [
+            "substrate_(sub)structure",
+            "product_(sub)structure",
+            "isBalanced",
+            "isAuthentic",
+            "isIntermediate"
+          ]
         }
-      },
-      "required": ["substrate_(sub)structure", "product_(sub)structure", "reactionMetadata"],
-      "minItems": 1,
-      "uniqueItems": true
+      }
     },
     "databaseIds": {
       "type": "array",
@@ -68,86 +105,12 @@
     "evidence": {
       "type": "array",
       "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "evidenceCode": {
-            "$ref": "#/$defs/evidenceCode"
-          },
-          "references": {
-            "type": "array",
-            "items": {
-              "$ref": "/schemas/common/citation.json"
-            },
-            "minItems": 1,
-            "uniqueItems": true
-          }
-        },
-        "required": ["evidenceCode", "references"]
+        "$ref": "#/$defs/evidence"
       },
       "minItems": 1,
       "uniqueItems": true
-    },
-    "experimentMetadata": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "system": {
-          "type": "string",
-          "enum": [
-            "in vivo",
-            "in vitro"
-          ]
-        },
-        "description": {
-          "type": "string"
-        },
-        "time": {
-          "title": "Only when in vitro: Experiment reaction time in minutes.",
-          "type": "integer",
-          "minimum": 1
-        },
-        "temperature": {
-          "title": "Only when in vitro: Experiment temperature in Kelvin.",
-          "type": "integer",
-          "minimum": 1
-        },
-        "pH": {
-          "title": "Only when in vitro: Experiment pH.",
-          "type": "number",
-          "minimum": 1,
-          "maximum": 14
-        },
-        "pressure": {
-          "title": "Only when in vitro: pressure in milibar.",
-          "type": "number"
-        },
-        "Km": {
-          "type": "object",
-          "title": "Only when in vitro: Michaelis constant, as concentration.",
-          "additionalProperties": false,
-          "properties": {
-            "value": {
-              "type": "number"
-            },
-            "unit": {
-              "type": "string",
-              "enum": [
-                "mM",
-                "µM",
-                "nM"
-              ]
-            }
-          }
-        },
-        "kcat": {
-          "title": "Only when in vitro: catalytic constant/turnover number, per second",
-          "type": "number"
-        }
-      }
     }
   },
-  "required": ["tailoring", "reactionSMARTS", "validated_reactions", "evidence"],
   "$defs": {
     "tailoringFunction": {
       "type": "object",
@@ -207,14 +170,40 @@
         }
       ]
     },
-    "evidenceCode": {
-      "type": "string",
-      "enum": [
-        "Knock-out studies",
-        "Enzymatic assays",
-        "Heterologous expression",
-        "In vitro expression"
-      ]
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "evidenceCode": {
+          "title": "Evidence for reaction and substrate specificity",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "Enzymatic assays",
+              "Heterologous expression",
+              "In vitro determination",
+              "Isothermal titration calorimetry",
+              "Knock-out studies",
+              "NMR",
+              "Site-directed mutagenesis",
+              "Surface plasmon resonance",
+              "(Tandem) mass spectrometry",
+              "X-ray crystallography"
+            ]
+          }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/citation.json"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": ["evidenceCode", "references"]
     }
   }
 }
