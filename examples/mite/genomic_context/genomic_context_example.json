@@ -14,9 +14,11 @@
   ],
   "evidence": [
     {
-      "evidenceCode": "Knock-out studies",
+      "evidenceCode": [
+        "Knock-out studies"
+      ],
       "references": [
-        "doi:10.1074/jbc.M803995200"
+        "doi:10.1128/jb.181.8.2659-2662.1999"
       ]
     }
   ]

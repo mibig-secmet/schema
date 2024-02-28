@@ -5,21 +5,24 @@
     "uniprot:Q9X2V9",
     "genpept:AAD28496.1"
   ],
-  "evidence": [
-    {
-      "evidenceCode": "Knock-out studies",
-      "references": [
-        "doi:10.1128/jb.181.8.2659-2662.1999"
-      ]
-    }
-  ],
   "auxiliary_enzymes": [
     {
       "name": "McjB",
-      "description": "Lasso peptide cysteine protease. Required for macrolactam-synthethase function (folds and cleaves precursor peptide)",
+      "description": "Lassopeptide cysteine protease. Required for macrolactam-synthethase function (folds and cleaves precursor peptide)",
       "databaseIds": [
         "uniprot:Q9X2V8",
         "genpept:AAD28495.1"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidenceCode": [
+        "Experimental evidence at protein level"
+      ],
+      "references": [
+        "doi:10.1128/jb.181.8.2659-2662.1999",
+        "doi:10.1002/cbic.201200016"
       ]
     }
   ]
