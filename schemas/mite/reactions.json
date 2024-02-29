@@ -2,7 +2,7 @@
   "$id": "https://meta.secondarymetabolites.org/schemas/mite/reactions.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
-  "required": ["tailoring", "reactionCXSMARTS", "validated_reactions"],
+  "required": ["tailoring", "reactionSMARTS", "validated_reactions"],
   "properties": {
     "tailoring": {
       "title": "Ontology-derived tailoring/maturation reaction term.",
@@ -17,13 +17,13 @@
       "title": "Additional information about tailoring/maturation reaction.",
       "type": "string"
     },
-    "reactionCXSMARTS": {
-      "title": "A reaction CXSMARTS (Chemaxon SMARTS) pattern describing the (sub)structure to match and the reaction to perform.",
+    "reactionSMARTS": {
+      "title": "A reaction SMARTS (RDKIT reaction SMARTS or Chemaxon reaction CXSMARTS) pattern describing the (sub)structure to match and the reaction to perform.",
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "reactionCXSMARTS": {
-          "title": "The CXSMARTS string",
+        "reactionSMARTS": {
+          "title": "The reaction SMARTS or reaction CXSMARTS string",
           "type": "string",
           "pattern": "^.+>>.+$"
         },
@@ -74,7 +74,7 @@
         }
       },
       "required": [
-        "reactionCXSMARTS",
+        "reactionSMARTS",
         "isIterative",
         "hasLinker",
         "hasPositionVariationBond",
