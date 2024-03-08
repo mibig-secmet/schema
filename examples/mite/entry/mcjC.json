@@ -86,9 +86,7 @@
     ],
     "evidence": [
       {
-        "evidenceCode": [
-          "Knock-out studies"
-        ],
+        "method": "Knock-out studies",
         "references": [
           "doi:10.1128/jb.181.8.2659-2662.1999"
         ]

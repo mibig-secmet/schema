@@ -58,22 +58,18 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "evidenceCode": {
+        "method": {
           "title": "Evidence for BGC existence.",
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "type": "string",
-            "enum": [
-              "Homology-based prediction",
-              "Correlation of genomic and metabolomic data",
-              "Gene expression correlated with compound production",
-              "Knock-out studies",
-              "Enzymatic assays",
-              "Heterologous expression",
-              "In vitro expression"
-            ]
-          }
+          "type": "string",
+          "enum": [
+            "Homology-based prediction",
+            "Correlation of genomic and metabolomic data",
+            "Gene expression correlated with compound production",
+            "Knock-out studies",
+            "Enzymatic assays",
+            "Heterologous expression",
+            "In vitro expression"
+          ]
         },
         "references": {
           "type": "array",
@@ -84,7 +80,7 @@
           "uniqueItems": true
         }
       },
-      "required": ["evidenceCode", "references"]
+      "required": ["method", "references"]
     },
     "databaseId": {
       "type": "string",
