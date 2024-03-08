@@ -85,18 +85,15 @@
       "additionalProperties": false,
       "properties": {
         "method": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "NMR",
-              "Mass spectrometry",
-              "MS/MS",
-              "X-ray crystallography",
-              "Chemical derivatisation",
-              "Total synthesis"
-            ]
-          }
+          "type": "string",
+          "enum": [
+            "NMR",
+            "Mass spectrometry",
+            "MS/MS",
+            "X-ray crystallography",
+            "Chemical derivatisation",
+            "Total synthesis"
+          ]
         },
         "references": {
           "type": "array",
