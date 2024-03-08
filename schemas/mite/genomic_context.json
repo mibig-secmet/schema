@@ -52,7 +52,7 @@
       "uniqueItems": true
     }
   },
-  "required": ["databaseIds", "evidence"],
+  "required": ["evidence"],
   "$defs": {
     "evidence": {
       "type": "object",
