@@ -83,7 +83,7 @@
     },
     "validated_reactions": {
       "type": "array",
-      "title": "One or more substrate (sub)structure -> product (sub)structure pairs that result from application of reactionCXSMARTS.",
+      "title": "One or more substrate (sub)structure -> product (sub)structure pairs that result from application of reaction SMARTS.",
       "minItems": 1,
       "items": {
         "type": "object",
