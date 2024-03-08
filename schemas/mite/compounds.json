@@ -48,8 +48,7 @@
   "required": ["name", "evidence"],
   "$defs": {
     "class": {
-      "type": "string",
-      "enum": ["alkaloid", "nucleoside", "peptide"]
+      "type": "string"
     },
     "databaseId": {
       "type": "string",
