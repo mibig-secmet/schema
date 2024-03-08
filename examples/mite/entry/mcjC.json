@@ -52,15 +52,20 @@
       ],
       "evidence": [
         {
-          "method": [
-            "Mass spectrometry",
-            "MS/MS",
-            "NMR",
-            "Total synthesis"
-          ],
-          "references": [
-            "doi:10.1021/ja036756q"
-          ]
+          "method": "Total synthesis",
+          "references": ["doi:10.1021/ja036756q"]
+        },
+        {
+          "method": "Mass spectrometry",
+          "references": ["doi:10.1021/ja036756q"]
+        },
+        {
+          "method": "MS/MS",
+          "references": ["doi:10.1021/ja036756q"]
+        },
+        {
+          "method": "NMR",
+          "references": ["doi:10.1021/ja036756q"]
         }
       ]
     }
