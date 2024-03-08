@@ -26,8 +26,8 @@
       "$ref": "/schemas/mite/enzyme.json"
     },
     "compounds": {
-      "type": "array",
       "title": "Mature compound(s) (end products) associated with enzyme (were acted on by enzyme).",
+      "type": "array",
       "items": {
         "$ref": "/schemas/mite/compounds.json"
       },
