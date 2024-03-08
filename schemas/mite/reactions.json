@@ -31,8 +31,8 @@
           "title": "Flag to indicate if the reaction is applied iteratively (modifying all possible substructures).",
           "type": "boolean"
         },
-        "hasLinker": {
-          "title": "Flag to indicate if the reaction contains a Link group to represent repeating units of variable length (e.g. a C-chain of variable length).",
+        "hasFrequencyVariation": {
+          "title": "Flag to indicate if the reaction contains a frequency variation to represent repeating units of variable length (e.g. a C-chain of variable length).",
           "type": "boolean"
         },
         "hasPositionVariationBond": {
@@ -76,7 +76,7 @@
       "required": [
         "reactionSMARTS",
         "isIterative",
-        "hasLinker",
+        "hasFrequencyVariation",
         "hasPositionVariationBond",
         "evidence"
       ]
