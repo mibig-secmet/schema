@@ -13,12 +13,7 @@
       "uniqueItems": true
     },
     "steps": {
-      "type": "array",
-      "items": {
-        "$ref": "/schemas/mibig/biosynthesis/path/step.json"
-      },
-      "minItems": 1,
-      "uniqueItems": true
+      "type": "string"
     },
     "references": {
       "type": "array",
