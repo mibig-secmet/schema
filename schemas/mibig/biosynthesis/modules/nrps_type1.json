@@ -1,5 +1,5 @@
 {
-  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/nrps_type1.json",
+  "$id": "https://meta.secondarymetabolites.org/schemas/mibig/biosynthesis/modules/nrps_type1.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,

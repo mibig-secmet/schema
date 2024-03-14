@@ -6,7 +6,63 @@
   "properties": {
     "type": {
       "const": "cal"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "comments": {
+      "type": "string"
+    },
+    "genes": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/common/gene_id.json"
+      }
+    },
+    "integrated_monomers": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/mibig/biosynthesis/common/monomer.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "modification_domains": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/aminotransferase.json"
+          },
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/cyclase.json"
+          },
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/dehydratase.json"
+          },
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/enoylreductase.json"
+          },
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/epimerase.json"
+          },
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/hydroxylase.json"
+          },
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/ketoreductase.json"
+          },
+          {
+            "$ref": "/schemas/mibig/biosynthesis/domains/methyltransferase.json"
+          },
+          { "$ref": "/schemas/mibig/biosynthesis/domains/other.json" },
+          { "$ref": "/schemas/mibig/biosynthesis/domains/oxidase.json" }
+        ]
+      }
+    },
+    "name": {
+      "type": "string"
     }
   },
-  "required": ["type"]
+  "required": ["type", "name", "genes", "active"]
 }
