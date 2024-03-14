@@ -14,7 +14,10 @@
       "uniqueItems": true
     },
     "bioactivities": {
-      "type": "array"
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/bioactivity"
+      }
     },
     "cyclic": {
       "type": "boolean"
@@ -53,15 +56,54 @@
     "mass": {
       "type": "number"
     },
-    "ionType": {
-      "$ref": "#/$defs/ionType"
-    },
     "formula": {
       "type": "string"
     }
   },
   "required": ["name", "evidence"],
   "$defs": {
+    "assay": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "concentration": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        }
+      },
+      "required": ["concentration", "target"]
+    },
+    "bioactivity": {
+      "type": "object",
+      "extra_properties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "observed": {
+          "type": "boolean"
+        },
+        "assays": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/assay"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/citation.json"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": ["name", "observed", "references"]
+    },
     "class": {
       "type": "string",
       "enum": ["alkaloid", "nucleoside", "peptide"]
@@ -120,30 +162,6 @@
         }
       },
       "required": ["method", "references"]
-    },
-    "ionType": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "ion": {
-          "type": "string",
-          "enum": ["[M+H]+", "[M-H]-", "[M+Na]+", "[2M+Na]+", "[2M+H]+", "[M+2H]2+", "[M+3H]3+", "[M+56Fe-2H]+", "[M+NH4]+", "[M+K]+", "[M+H2O+H]+", "other"]
-        },
-        "details": {
-          "type": "string"
-        }
-      },
-      "required": ["ion"],
-      "if": {
-        "properties": {
-          "ion": {
-            "const": "other"
-          }
-        }
-      },
-      "then": {
-        "required": ["details"]
-      }
     },
     "name": {
       "type": "string",
