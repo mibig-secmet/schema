@@ -214,6 +214,7 @@
             "type": "string",
             "enum": [
               "Heterologous expression",
+              "Inference from genomic data and chemical structure",
               "In vitro assay",
               "Isothermal titration calorimetry",
               "Knock-out studies",
