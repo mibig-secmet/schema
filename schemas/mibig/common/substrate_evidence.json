@@ -4,7 +4,7 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "name": {
+    "method": {
       "type": "string",
       "enum": [
         "Activity assay",
@@ -35,5 +35,5 @@
       "uniqueItems": true
     }
   },
-  "required": ["name", "references"]
+  "required": ["method", "references"]
 }
