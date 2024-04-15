@@ -7,6 +7,10 @@
     "accession": {
       "$ref": "#/$defs/entryId"
     },
+    "version": {
+      "type": "number",
+      "minValue": 1
+    },
     "changelog": {
       "$ref": "/schemas/common/changelog.json"
     },
@@ -83,6 +87,7 @@
   "required": [
     "accession",
     "changelog",
+    "version",
     "quality",
     "status",
     "completeness",
