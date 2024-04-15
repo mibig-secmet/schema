@@ -1,9 +1,10 @@
 {
   "accession": "BGC0000311",
+  "version": 3,
   "changelog": {
     "releases": [
       {
-        "version": "1.0",
+        "version": "1",
         "date": "2015-06-12",
         "entries": [
           {
@@ -15,7 +16,7 @@
         ]
       },
       {
-        "version": "2.0",
+        "version": "2",
         "date": "2019-10-16",
         "entries": [
           {
@@ -27,7 +28,7 @@
         ]
       },
       {
-        "version": "3.1",
+        "version": "3",
         "date": "2022-10-07",
         "entries": [
           {
@@ -52,7 +53,7 @@
       },
       "evidence": [
         {
-          "evidenceCode": "Knock-out studies",
+          "method": "Knock-out studies",
           "references": ["pubmed:10390204"]
         }
       ]

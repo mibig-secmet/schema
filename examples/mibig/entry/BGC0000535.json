@@ -1,9 +1,10 @@
 {
   "accession": "BGC0000535",
+  "version": 3,
   "changelog": {
     "releases": [
       {
-        "version": "1.0",
+        "version": "1",
         "date": "2015-06-12",
         "entries": [
           {
@@ -15,7 +16,7 @@
         ]
       },
       {
-        "version": "2.0",
+        "version": "2",
         "date": "2019-10-16",
         "entries": [
           {
@@ -27,7 +28,7 @@
         ]
       },
       {
-        "version": "3.1",
+        "version": "3",
         "date": "2022-10-07",
         "entries": [
           {
@@ -52,7 +53,7 @@
       },
       "evidence": [
         {
-          "evidenceCode": "Gene expression correlated with compound production",
+          "method": "Gene expression correlated with compound production",
           "references": ["pubmed:21183019"]
         }
       ]
@@ -68,11 +69,11 @@
             },
             "evidence": [
               {
-                "name": "Knock-out",
+                "method": "Knock-out",
                 "references": ["pubmed:21183019"]
               },
               {
-                "name": "Activity assay",
+                "method": "Activity assay",
                 "references": ["pubmed:21183019"]
               }
             ]
@@ -88,11 +89,11 @@
             },
             "evidence": [
               {
-                "name": "Knock-out",
+                "method": "Knock-out",
                 "references": ["pubmed:21183019"]
               },
               {
-                "name": "Activity assay",
+                "method": "Activity assay",
                 "references": ["pubmed:21183019"]
               }
             ]
@@ -108,11 +109,11 @@
             },
             "evidence": [
               {
-                "name": "Knock-out",
+                "method": "Knock-out",
                 "references": ["pubmed:21183019"]
               },
               {
-                "name": "Activity assay",
+                "method": "Activity assay",
                 "references": ["pubmed:21183019"]
               }
             ]
@@ -128,11 +129,11 @@
             },
             "evidence": [
               {
-                "name": "Knock-out",
+                "method": "Knock-out",
                 "references": ["pubmed:21183019"]
               },
               {
-                "name": "Activity assay",
+                "method": "Activity assay",
                 "references": ["pubmed:21183019"]
               }
             ]
@@ -148,11 +149,11 @@
             },
             "evidence": [
               {
-                "name": "Knock-out",
+                "method": "Knock-out",
                 "references": ["pubmed:21183019"]
               },
               {
-                "name": "Activity assay",
+                "method": "Activity assay",
                 "references": ["pubmed:21183019"]
               }
             ]
@@ -168,7 +169,7 @@
             },
             "evidence": [
               {
-                "name": "Activity assay",
+                "method": "Activity assay",
                 "references": ["doi:10.1021/acs.biochem.7b00524"]
               }
             ]
@@ -184,11 +185,11 @@
             },
             "evidence": [
               {
-                "name": "Knock-out",
+                "method": "Knock-out",
                 "references": ["pubmed:21183019"]
               },
               {
-                "name": "Activity assay",
+                "method": "Activity assay",
                 "references": ["pubmed:21183019"]
               }
             ]
@@ -204,11 +205,11 @@
             },
             "evidence": [
               {
-                "name": "Knock-out",
+                "method": "Knock-out",
                 "references": ["pubmed:21183019"]
               },
               {
-                "name": "Activity assay",
+                "method": "Activity assay",
                 "references": ["pubmed:21183019"]
               }
             ]
@@ -224,11 +225,11 @@
             },
             "evidence": [
               {
-                "name": "Knock-out",
+                "method": "Knock-out",
                 "references": ["pubmed:21183019"]
               },
               {
-                "name": "Activity assay",
+                "method": "Activity assay",
                 "references": ["pubmed:21183019"]
               }
             ]
@@ -244,11 +245,11 @@
             },
             "evidence": [
               {
-                "name": "Knock-out",
+                "method": "Knock-out",
                 "references": ["pubmed:21183019"]
               },
               {
-                "name": "Activity assay",
+                "method": "Activity assay",
                 "references": ["pubmed:21183019"]
               }
             ]
@@ -264,11 +265,11 @@
             },
             "evidence": [
               {
-                "name": "Knock-out",
+                "method": "Knock-out",
                 "references": ["pubmed:21183019"]
               },
               {
-                "name": "Activity assay",
+                "method": "Activity assay",
                 "references": ["pubmed:21183019"]
               }
             ]
