@@ -8,10 +8,67 @@
       "const": "ribosomal"
     },
     "subclass": {
-      "oneOf": [{ "$ref": "#/$defs/RiPP" }, { "$ref": "#/$defs/unmodified" }]
+      "enum": ["RiPP", "unmodified"]
+    },
+    "ripp_type": {
+      "type": "string",
+      "enum": [
+        "Atropopeptide",
+        "Biarylitide",
+        "Bottromycin",
+        "Borosin",
+        "Crocagin",
+        "Cyanobactin",
+        "Cyptide",
+        "Dikaritin",
+        "Epipeptide",
+        "Glycocin",
+        "Graspetide",
+        "Guanidinotide",
+        "Head-to-tail cyclized peptide",
+        "Lanthipeptide",
+        "LAP",
+        "Lasso peptide",
+        "Linaridin",
+        "Methanobactin",
+        "Microcin",
+        "Microviridin",
+        "Mycofactocin",
+        "Pearlin",
+        "Proteusin",
+        "Ranthipeptide",
+        "Rotapeptide",
+        "Ryptide",
+        "Sactipeptide",
+        "Spliceotide",
+        "Streptide",
+        "Sulfatyrotide",
+        "Thioamidide",
+        "Thiopeptide",
+        "Other"
+      ]
+    },
+    "details": {
+      "type": "string"
+    },
+    "peptidases": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/common/gene_id.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "precursors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/precursor"
+      },
+      "minItems": 1,
+      "uniqueItems": true
     }
   },
-  "required": ["class", "subclass"],
+  "required": ["class", "subclass", "precursors"],
   "$defs": {
     "precursor": {
       "type": "object",
@@ -60,84 +117,6 @@
         }
       },
       "required": ["gene", "core_sequence"]
-    },
-    "RiPP": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "class": {
-          "const": "RiPP"
-        },
-        "subclass": {
-          "type": "string",
-          "enum": [
-            "Atropopeptide",
-            "Biarylitide",
-            "Bottromycin",
-            "Borosin",
-            "Crocagin",
-            "Cyanobactin",
-            "Cyptide",
-            "Dikaritin",
-            "Epipeptide",
-            "Glycocin",
-            "Guanidinotide",
-            "Head-to-tail cyclized peptide",
-            "Lanthipeptide",
-            "LAP",
-            "Lasso peptide",
-            "Linaridin",
-            "Methanobactin",
-            "Microcin",
-            "Microviridin",
-            "Mycofactocin",
-            "Pearlin",
-            "Proteusin",
-            "Ranthipeptide",
-            "Rotapeptide",
-            "Ryptide",
-            "Sactipeptide",
-            "Spliceotide",
-            "Streptide",
-            "Sulfatyrotide",
-            "Thioamidide",
-            "Thiopeptide",
-            "Other"
-          ]
-        },
-        "details": {
-          "type": "string"
-        },
-        "peptidases": {
-          "type": "array",
-          "items": {
-            "$ref": "/schemas/common/gene_id.json"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "precursors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/precursor"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        }
-      },
-      "required": ["class", "subclass"]
-    },
-    "unmodified": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "class": {
-          "const": "ribosomal unmodified"
-        },
-        "subclass": {
-          "type": "string"
-        }
-      }
     }
   }
 }
