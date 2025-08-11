@@ -62,6 +62,14 @@
         "name": {
           "$ref": "/schemas/common/gene_id.json"
         },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/gene_id.json"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
         "product": {
           "type": "string"
         },
