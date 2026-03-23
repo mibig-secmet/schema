@@ -34,6 +34,13 @@
     },
     "iterative": {
       "$ref": "#/$defs/iterative"
+    },
+    "thioesterases": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/mibig/biosynthesis/domains/thioesterase.json"
+      },
+      "uniqueItems": true
     }
   },
   "required": ["class", "subclass"],
