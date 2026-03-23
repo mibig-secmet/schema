@@ -66,11 +66,55 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "concentration": {
-          "type": "string"
+        "measurement": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "concentration": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "error": {
+              "type": "number"
+            },
+            "replicates": {
+              "type": "number"
+            }
+          }
+        },
+        "type": {
         },
         "target": {
           "type": "string"
+        },
+        "details": {
+          "type": "string"
+        },
+        "test_system": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "cell_line": {
+              "type": "string"
+            },
+            "organism": {
+              "type": "number"
+            },
+            "strain": {
+              "type": "string"
+            }
+          },
+          "required": []
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "/schemas/common/citation.json"
+          },
+          "minItems": 1,
+          "uniqueItems": true
         }
       },
       "required": ["concentration", "target"]
@@ -80,6 +124,9 @@
       "extra_properties": false,
       "properties": {
         "name": {
+          "type": "string"
+        },
+        "details": {
           "type": "string"
         },
         "observed": {
