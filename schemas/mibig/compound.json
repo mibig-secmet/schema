@@ -28,6 +28,9 @@
     "structure": {
       "$ref": "/schemas/common/smiles.json"
     },
+    "partial_structure": {
+      "type": "boolean"
+    },
     "synonyms": {
       "type": "array",
       "items": {
